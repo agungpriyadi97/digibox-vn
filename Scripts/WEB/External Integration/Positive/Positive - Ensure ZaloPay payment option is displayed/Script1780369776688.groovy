@@ -49,8 +49,6 @@ WebUI.waitForPageLoad(10)
 // ========================= VERIFIKASI GATEWAY ZALOPAY =========================
 WebUI.waitForElementVisible(findTestObject('WEB/ZaloPayGateway/merchant_logo'), 10)
 
-WebUI.takeScreenshot('C:\\Users\\AgungPriyadi\\Katalon Studio\\digibox-vn\\Marchant_logo')
-
 WebUI.verifyElementPresent(findTestObject('WEB/ZaloPayGateway/merchant_name'), 5)
 
 WebUI.verifyElementPresent(findTestObject('WEB/ZaloPayGateway/transaction_content_value'), 5)

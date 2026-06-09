@@ -43,7 +43,7 @@
       <guid>fa59f4eb-8da8-47bd-a1a3-a51f324d2ca5</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/Authentication/Forgot Password/Positive/Positive - Ensure user can log in using newly changed password</testCaseId>
+      <testCaseId>Test Cases/WEB/Authentication/Forgot Password/Positive/Positive - Ensure user can log in using new changed password</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
