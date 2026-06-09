@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//button[contains(@class, 'add-voucher_btn')]//span[text()='Áp dụng']</value>
+         <value>/html/body/div[1]/div/div/div[1]/div/section/div[2]/section/section[1]/div/button</value>
       </entry>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

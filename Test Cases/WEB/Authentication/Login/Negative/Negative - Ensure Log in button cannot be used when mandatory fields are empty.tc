@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Memastikan tombol Log in tidak dapat digunakan ketika field mandatory kosong</description>
-   <name>Negative - Ensure Log in button cannot be used when mandatory fields are empty</name>
-   <tag></tag>
-   <comment></comment>
-   <recordOption>OTHER</recordOption>
-   <testCaseGuid>5c2018f3-0208-416d-9096-e5ce41ced1af</testCaseGuid>
-</TestCaseEntity>

@@ -78,7 +78,7 @@
       <guid>1367a849-57f2-46d8-9c4e-3f1c4014a1eb</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/Authentication/Forgot Password/Positive/Positive - Ensure user can log in using newly changed password</testCaseId>
+      <testCaseId>Test Cases/WEB/Authentication/Forgot Password/Positive/Positive - Ensure user can log in using new changed password</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
@@ -387,13 +387,6 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Checkout/Positive/Positive - Ensure user can checkout order successfully</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>24a6bdf9-2722-467f-8886-77c587af3ccd</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/Checkout/Positive/Positive - Ensure user can checkout using Pick Up method</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Memastikan user dapat melakukan checkout menggunakan metode Pick Up</description>
-   <name>Positive - Ensure user can checkout using Pick Up method</name>
-   <tag></tag>
-   <comment></comment>
-   <recordOption>OTHER</recordOption>
-   <testCaseGuid>1235405c-ea14-4c5a-950c-bd8f24eb0b25</testCaseGuid>
-</TestCaseEntity>
