@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Memastikan guest dapat mengakses halaman pelacakan pesanan</description>
-   <name>Positive - Ensure guest user can access order tracking page</name>
-   <tag></tag>
-   <comment></comment>
-   <recordOption>OTHER</recordOption>
-   <testCaseGuid>9af49dd2-75d0-4355-beeb-58fa7bff4b03</testCaseGuid>
-</TestCaseEntity>
