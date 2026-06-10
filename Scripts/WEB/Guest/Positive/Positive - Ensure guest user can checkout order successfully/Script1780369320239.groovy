@@ -71,7 +71,7 @@ WebUI.click(findTestObject('WEB/Checkout/OrderSummary/chk_accept_terms'))
 
 WebUI.delay(10)
 
-WebUI.click(findTestObject('WEB/Checkout/OrderSummary/button_Thanh ton'))
+WebUI.click(findTestObject('WEB/Checkout/OrderSummary/button_thanh_thon_2'))
 
 WebUI.waitForPageLoad(10)
 
