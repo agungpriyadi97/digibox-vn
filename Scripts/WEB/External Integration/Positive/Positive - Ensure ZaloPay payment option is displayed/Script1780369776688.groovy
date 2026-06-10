@@ -49,7 +49,7 @@ WebUI.waitForPageLoad(10)
 // ========================= VERIFIKASI GATEWAY ZALOPAY =========================
 WebUI.waitForElementVisible(findTestObject('WEB/ZaloPayGateway/merchant_logo'), 10)
 
-WebUI.verifyElementPresent(findTestObject('WEB/ZaloPayGateway/merchant_name'), 5)
+WebUI.verifyElementPresent(findTestObject('WEB/ZaloPayGateway/merchant_logo'), 5)
 
 WebUI.verifyElementPresent(findTestObject('WEB/ZaloPayGateway/transaction_content_value'), 5)
 

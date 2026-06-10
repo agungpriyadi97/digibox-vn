@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>/html/body/div/div/div/div[1]/div/div[3]/div/div[2]/div/div/section[2]/section/ul/div/div[2]/div[1]/div/div/div[2]</value>
+         <value>(//div[@class='address-center add-new' and contains(text(), 'Thêm địa chỉ mới')])[2]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -29,7 +29,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>div</value>
-      <webElementGuid>50643974-f505-4953-9230-5e3d4bd87c3a</webElementGuid>
+      <webElementGuid>3722a4f2-cad0-4444-9ebb-36daf7be644c</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -37,7 +37,7 @@
       <name>class</name>
       <type>Main</type>
       <value>address-center add-new</value>
-      <webElementGuid>c6b9e155-df69-486c-8996-705ac5643054</webElementGuid>
+      <webElementGuid>2c1049ea-8c64-4938-b6aa-6c00e4b57624</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -47,7 +47,7 @@
       <value>
               Thêm địa chỉ mới
             </value>
-      <webElementGuid>8c800f96-19fd-405a-b132-475cfe437065</webElementGuid>
+      <webElementGuid>80968260-8e07-444b-baa6-37a79cc1f8c8</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -55,7 +55,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;el-collapse-head-1037&quot;)/div[@class=&quot;gt-address_list-item__content&quot;]/div[@class=&quot;address-center add-new&quot;]</value>
-      <webElementGuid>3171227c-2ad5-435b-9086-512f17922e6a</webElementGuid>
+      <webElementGuid>d430c0b9-5045-4692-a3af-7b54267e8637</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -63,7 +63,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='el-collapse-head-1037']/div/div[2]</value>
-      <webElementGuid>7e0c18b1-4ee5-426f-9573-8970e911ccae</webElementGuid>
+      <webElementGuid>02027c68-74f2-4fa9-99d6-99421b6c74f9</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -71,7 +71,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Huỷ'])[5]/following::div[6]</value>
-      <webElementGuid>22c376c4-c5b8-40f9-bfc6-9cc0189d33ad</webElementGuid>
+      <webElementGuid>92fb2e49-e669-4da9-9af8-4c87953fe7b3</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -79,7 +79,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Lưu'])[5]/following::div[6]</value>
-      <webElementGuid>ddb125be-7582-4987-9115-10976acb64b6</webElementGuid>
+      <webElementGuid>61a8282a-463c-48f3-bd2d-8b0c2e48f97e</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -87,7 +87,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Cá nhân'])[6]/preceding::div[2]</value>
-      <webElementGuid>7101a31c-6c28-45cc-b4bc-dfeb0bd49dd7</webElementGuid>
+      <webElementGuid>08d52734-a225-4427-a782-b85b470c1005</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -95,7 +95,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Công ty'])[6]/preceding::div[2]</value>
-      <webElementGuid>2d725511-293b-42b6-9f88-5f174f009660</webElementGuid>
+      <webElementGuid>ef6040bd-e486-46ed-804f-a6d00fe280a6</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -103,7 +103,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//ul/div/div[2]/div/div/div/div[2]</value>
-      <webElementGuid>1b9e4b19-f75a-4ade-8c38-fbf734fcb83e</webElementGuid>
+      <webElementGuid>7999d29c-c774-492f-bf03-3e290a43eb02</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -115,6 +115,6 @@
             ' or . = '
               Thêm địa chỉ mới
             ')]</value>
-      <webElementGuid>7b8bcd6f-8e73-4d62-959a-797cc1e1ec93</webElementGuid>
+      <webElementGuid>342314ea-194a-4b7a-9bff-590579c63639</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>
