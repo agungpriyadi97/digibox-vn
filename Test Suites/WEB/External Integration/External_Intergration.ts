@@ -32,4 +32,11 @@
       <testCaseId>Test Cases/WEB/External Integration/Positive/Positive - Ensure ZaloPay interface displays all available payment methods</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
+   <testCaseLink>
+      <guid>5e3b5b7c-d0f7-41f9-beeb-ea6bd49c05b2</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WEB/External Integration/Positive/Positive - Verify user can click Zalo chat button and open Zalo link in new tab</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
 </TestSuiteEntity>

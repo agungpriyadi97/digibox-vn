@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Negative - Ensure guest user input code invalid</name>
+   <name>Positive - Verify user can click Zalo chat button and open Zalo link in new tab</name>
    <tag></tag>
    <comment></comment>
    <recordOption>OTHER</recordOption>
-   <testCaseGuid>9881598e-cebe-4d67-aaa7-757aef4b2d3f</testCaseGuid>
+   <testCaseGuid>fb103539-828c-4bab-bcc1-bf629f2638b6</testCaseGuid>
 </TestCaseEntity>

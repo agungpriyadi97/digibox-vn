@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Negative - Ensure guest user receives error message when entering an invalid verification code on order tracking page</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>1f574ff8-53c8-4b85-a303-ed447c435bb0</testCaseGuid>
+</TestCaseEntity>

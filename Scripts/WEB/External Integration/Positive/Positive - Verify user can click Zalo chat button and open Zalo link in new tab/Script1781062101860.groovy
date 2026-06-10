@@ -17,3 +17,26 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+// Klik tombol Zalo
+WebUI.verifyElementVisible(findTestObject('WEB/Home/Navbar/zaloChatButton'))
+
+WebUI.click(findTestObject('WEB/Home/Navbar/zaloChatButton'))
+
+// Tunggu tab baru terbuka (opsional)
+WebUI.delay(2)
+
+// Pindah ke tab baru (index dimulai dari 0)
+WebUI.switchToWindowIndex(1)
+
+// Verifikasi URL
+String currentUrl = WebUI.getUrl()
+
+WebUI.verifyMatch(currentUrl, 'https://zalo.me/4480413680347660968', false)
+
+WebUI.takeScreenshot()
+
+WebUI.switchToWindowIndex(0)
+
+// Bersihkan
+WebUI.closeBrowser()
+
