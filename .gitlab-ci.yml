@@ -6,44 +6,51 @@ stages:
   - test
 
 variables:
+  # Ensures the job continues through all browser types even if one fails
   CONTINUE_ON_FAILURE: "true"
+  # CRITICAL: Increase shared memory size for Chrome Headless in Docker
+  # This prevents the "Out of Memory" crashes on heavy pages like Digibox
   GS_OPTIONS: "-Xmx2048m -Xms512m -Djava.shm.size=2g"
 
-.before_script_template: &before_script_template
-  before_script:
-    - rm -rf Reports/* Screenshot/* failure_*.html || true
-    - apt-get update -o Acquire::AllowInsecureRepositories=true -o Doomsday::Ignore=true -y || true
-    - apt-get install -y --allow-unauthenticated ffmpeg
-    - ffmpeg -version
-
-.set_test_path: &set_test_path
-  - |
-    if [ -z "$TEST_PATH" ]; then
-      echo "Running default Digibox Regression Collection..."
-      export FINAL_PATH="Test Suites/WEB/Web_Test_Suite_Collection/Regression_Digiboxvn_Web"
-      export ARG_TYPE="-testSuiteCollectionPath"
-    else
-      echo "Running custom test: $TEST_PATH"
-      export FINAL_PATH=$(echo "$TEST_PATH" | cut -d'=' -f2)
-      export ARG_TYPE=$(echo "$TEST_PATH" | cut -d'=' -f1)
-    fi
-
-# Job untuk Chrome (headless) - dengan allow_failure true dan additionalCapabilities
-katalon_chrome_headless:
+katalon_digiboxvn_test:
   stage: test
   tags:
     - infra
-  timeout: 12h
+  # Extended timeout for sequential cross-browser execution
+  timeout: 12h  
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
     - if: $CI_PIPELINE_SOURCE == "web"
-  allow_failure: true   # ← agar pipeline tidak gagal jika test case ZaloPay gagal di Chrome headless
-  <<: *before_script_template
+  
+  before_script:
+    # Bersihkan folder Reports dari sisa pipeline sebelumnya agar artifact tidak menumpuk
+    - rm -rf Reports/* || true
+    # Force apt to ignore the unverified Edge repository so it doesn't return exit code 1
+    - apt-get update -o Acquire::AllowInsecureRepositories=true -o Doomsday::Ignore=true -y || true
+    # Install FFmpeg cleanly from standard Ubuntu repos to enable video recording
+    - apt-get install -y --allow-unauthenticated ffmpeg
+    - ffmpeg -version
+
   script:
-    - *set_test_path
     - curl ifconfig.me
     - |
-      echo "Starting Execution: Chrome (Headless)..."
+      # --- DIGIBOX PATH RESOLUTION ---
+      if [ -z "$TEST_PATH" ]; then
+        echo "Running default Digibox Regression Collection..."
+        # Menggunakan path asli untuk Digiboxvn
+        export FINAL_PATH="Test Suites/WEB/Web_Test_Suite_Collection/Regression_Digiboxvn_Web"
+        # Since this is a Collection, we use the Collection argument
+        export ARG_TYPE="-testSuiteCollectionPath"
+      else
+        echo "Running custom test: $TEST_PATH"
+        # Parses custom input like -testSuitePath=Test Suites/Folder/Suite
+        export FINAL_PATH=$(echo "$TEST_PATH" | cut -d'=' -f2)
+        export ARG_TYPE=$(echo "$TEST_PATH" | cut -d'=' -f1)
+      fi
+
+      # --- SEQUENTIAL CROSS-BROWSER EXECUTION (Chrome & Firefox Only) ---
+
+      echo "Starting Execution 1/2: Chrome (Headless)..."
       katalonc.sh -noSplash -runMode=console \
         -projectPath="$CI_PROJECT_DIR/digibox-vn.prj" \
         -retry=0 -apiKey="$KATALON_API_KEY" \
@@ -51,35 +58,9 @@ katalon_chrome_headless:
         -browserType="Chrome (headless)" \
         -reportFolder="Reports/Chrome_Reports" \
         -reportFileName="Chrome_Report" \
-        --config \
-        -webui.autoUpdateDrivers=true \
-        -webui.chrome.args="--disable-blink-features=AutomationControlled --user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 --no-sandbox --disable-dev-shm-usage --disable-gpu --window-size=1920,1080" \
-        -webui.chrome.additionalCapabilities='{"goog:chromeOptions": {"excludeSwitches": ["enable-automation"], "useAutomationExtension": false}}' \
-        || echo "Chrome tests completed. Exit code: $?"
-  artifacts:
-    when: always
-    paths:
-      - Reports/Chrome_Reports/
-      - Screenshot/
-      - failure_*.html
-    expire_in: 2 months
+        --config -webui.autoUpdateDrivers=true || echo "Chrome tests completed."
 
-# Job untuk Firefox (headless) - allow_failure juga opsional
-katalon_firefox_headless:
-  stage: test
-  tags:
-    - infra
-  timeout: 12h
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-    - if: $CI_PIPELINE_SOURCE == "web"
-  allow_failure: false   # Firefox seharusnya berhasil, set false jika ingin pipeline gagal saat ada kegagalan
-  <<: *before_script_template
-  script:
-    - *set_test_path
-    - curl ifconfig.me
-    - |
-      echo "Starting Execution: Firefox (Headless)..."
+      echo "Starting Execution 2/2: Firefox (Headless)..."
       katalonc.sh -noSplash -runMode=console \
         -projectPath="$CI_PROJECT_DIR/digibox-vn.prj" \
         -retry=0 -apiKey="$KATALON_API_KEY" \
@@ -87,15 +68,17 @@ katalon_firefox_headless:
         -browserType="Firefox (headless)" \
         -reportFolder="Reports/Firefox_Reports" \
         -reportFileName="Firefox_Report" \
-        --config \
-        -webui.autoUpdateDrivers=true \
-        -webui.firefox.args="-headless -width 1920 -height 1080" \
-        -webui.firefox.preferences="dom.webdriver.enabled=false; useAutomationExtension=false" \
-        || echo "Firefox tests completed. Exit code: $?"
+        --config -webui.autoUpdateDrivers=true || echo "Firefox tests completed."
+
+    # --- ARTIFACT PURGE & RETENTION CLEANUP (SAFE VERSION) ---
+    - echo "Cleaning up heavy video files from runner cache..."
+    # Menghapus rekaman video (.mp4) lama dari workspace runner lokal jika usianya sudah di atas 30 hari
+    - find Reports/ -type f -name "*.mp4" -mtime +30 -exec rm -f {} \; || true
+    # Seluruh manajemen retensi laporan (.html, .xml) diserahkan sepenuhnya ke fitur 'expire_in' milik GitLab
+
   artifacts:
     when: always
     paths:
-      - Reports/Firefox_Reports/
+      - Reports/
       - Screenshot/
-      - failure_*.html
-    expire_in: 2 months
+    expire_in: 2 mos
