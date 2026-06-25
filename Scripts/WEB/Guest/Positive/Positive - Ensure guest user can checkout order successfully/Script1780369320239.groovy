@@ -34,6 +34,33 @@ WebUI.setText(findTestObject('WEB/Checkout/DeliveryAddressCompany/input_mobile')
 
 WebUI.setText(findTestObject('WEB/Checkout/DeliveryAddressCompany/input_address'), 'No. 1, Đường Lê Duẩn, Phường Bến Nghé, Quận 1, Thành phố Hồ Chí Minh 700000, Vietnam')
 
+WebUI.scrollToElement(findTestObject('WEB/Checkout/DeliveryAddressIndividual/input_TnhThnh Ph_el-input__inner'), 5)
+
+WebUI.mouseOver(findTestObject('WEB/Checkout/DeliveryAddressIndividual/input_TnhThnh Ph_el-input__inner'))
+
+WebUI.click(findTestObject('WEB/Checkout/DeliveryAddressIndividual/input_TnhThnh Ph_el-input__inner'))
+
+WebUI.waitForElementClickable(findTestObject('WEB/Checkout/DeliveryAddressIndividual/li_TP. H Ch Minh'), 10)
+
+WebUI.mouseOver(findTestObject('WEB/Checkout/DeliveryAddressIndividual/li_TP. H Ch Minh'))
+
+WebUI.enhancedClick(findTestObject('WEB/Checkout/DeliveryAddressIndividual/li_TP. H Ch Minh'))
+
+//====================================================
+// WARD
+//====================================================
+WebUI.waitForElementClickable(findTestObject('WEB/Checkout/DeliveryAddressIndividual/input_PhngX_el-input__inner'), 20)
+
+WebUI.mouseOver(findTestObject('WEB/Checkout/DeliveryAddressIndividual/input_PhngX_el-input__inner'))
+
+WebUI.click(findTestObject('WEB/Checkout/DeliveryAddressIndividual/input_PhngX_el-input__inner'))
+
+WebUI.waitForElementClickable(findTestObject('WEB/Checkout/DeliveryAddressIndividual/li_X Phc Ha'), 20)
+
+WebUI.mouseOver(findTestObject('WEB/Checkout/DeliveryAddressIndividual/li_X Phc Ha'))
+
+WebUI.enhancedClick(findTestObject('WEB/Checkout/DeliveryAddressIndividual/li_X Phc Ha'))
+
 WebUI.setText(findTestObject('WEB/Checkout/DeliveryAddressCompany/input_zip'), '70000')
 
 WebUI.waitForElementClickable(findTestObject('WEB/Checkout/DeliveryAddressIndividual/btn_save'), 10)

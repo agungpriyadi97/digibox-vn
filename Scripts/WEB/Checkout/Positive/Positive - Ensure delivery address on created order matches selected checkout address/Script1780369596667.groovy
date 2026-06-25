@@ -36,11 +36,6 @@ String summary = WebUI.getText(findTestObject('WEB/Checkout/OrderSummary/lbl_ord
 
 WebUI.verifyMatch(summary, '.*Tóm tắt đơn hàng.*', true)
 
-// Masukkan kode promo
-not_run: WebUI.setText(findTestObject('WEB/Checkout/OrderSummary/input_promo_code'), 'DISCOUNT10')
-
-not_run: WebUI.click(findTestObject('WEB/Checkout/OrderSummary/btn_apply_promo'))
-
 // Ambil nilai total
 String total = WebUI.getText(findTestObject('WEB/Checkout/OrderSummary/txt_total'))
 
