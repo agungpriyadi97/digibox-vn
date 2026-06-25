@@ -49,14 +49,62 @@ WebUI.waitForPageLoad(30)
 WebUI.delay(3)
 
 // ========================= VERIFIKASI GATEWAY ZALOPAY =========================
-WebUI.waitForElementVisible(findTestObject('WEB/ZaloPayGateway/merchant_logo'), 10)
 
-WebUI.verifyElementPresent(findTestObject('WEB/ZaloPayGateway/merchant_logo'), 5)
+WebUI.waitForPageLoad(30)
+WebUI.delay(3)
 
-WebUI.verifyElementPresent(findTestObject('WEB/ZaloPayGateway/transaction_content_value'), 5)
+String currentUrl = WebUI.getUrl()
+String pageSource = DriverFactory.getWebDriver().getPageSource()
 
-WebUI.verifyElementPresent(findTestObject('WEB/ZaloPayGateway/option_open_zalopay_app'), 5)
+println("Current URL : " + currentUrl)
 
-// Screenshot dokumentasi
-WebUI.takeScreenshot('ZaloPay_Gateway.png')
+// =========================
+// Cek apakah halaman maintenance
+// =========================
 
+boolean isMaintenance =
+        currentUrl.toLowerCase().contains("maintenance") ||
+        pageSource.contains("Dịch vụ thanh toán") ||
+        pageSource.contains("bảo trì") ||
+        pageSource.toLowerCase().contains("maintenance")
+
+if (isMaintenance) {
+
+    WebUI.takeScreenshot("Reports/ZaloPay_Maintenance.png")
+
+    println("====================================")
+    println("ZaloPay Gateway sedang maintenance")
+    println("====================================")
+
+    com.kms.katalon.core.util.KeywordUtil.markWarning(
+        "ZaloPay Gateway sedang maintenance. Verifikasi dilewati."
+    )
+
+    return
+}
+
+// =========================
+// Verifikasi halaman payment normal
+// =========================
+
+WebUI.waitForElementVisible(
+    findTestObject('WEB/ZaloPayGateway/merchant_logo'),
+    20
+)
+
+WebUI.verifyElementPresent(
+    findTestObject('WEB/ZaloPayGateway/merchant_logo'),
+    10
+)
+
+WebUI.verifyElementPresent(
+    findTestObject('WEB/ZaloPayGateway/transaction_content_value'),
+    10
+)
+
+WebUI.verifyElementPresent(
+    findTestObject('WEB/ZaloPayGateway/option_open_zalopay_app'),
+    10
+)
+
+WebUI.takeScreenshot("Reports/ZaloPay_Gateway.png")

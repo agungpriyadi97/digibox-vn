@@ -1,25 +1,13 @@
-import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
-import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
-import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
-import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
-import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
-import com.kms.katalon.core.testcase.TestCase as TestCase
-import com.kms.katalon.core.testdata.TestData as TestData
-import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
-import com.kms.katalon.core.testobject.TestObject as TestObject
-import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.Keys as Keys
+import org.openqa.selenium.WebDriver as WebDriver
 import utils.MailinatorHelper as MailinatorHelper
 
 // ======================== STEP 1 ========================
-// callTestCase membuka browser aplikasi utama
+// Open Forgot Password Page
 WebUI.callTestCase(findTestCase('WEB/Authentication/Login/Positive/Positive - Ensure Forgot your password link redirects user to reset password page'), 
     [:], FailureHandling.STOP_ON_FAILURE)
 
@@ -32,35 +20,62 @@ WebUI.setText(findTestObject('WEB/Authentication/ForgotPassword/input_email'), e
 
 WebUI.click(findTestObject('WEB/Authentication/ForgotPassword/btn_verifikasiCode'))
 
+// Tunggu email terkirim
+WebUI.delay(3)
+
 // ======================== STEP 3 ========================
-WebUI.delay(3 // Beri waktu email terkirim
-    )
+WebDriver driver = DriverFactory.getWebDriver()
 
-// Simpan indeks window utama (aplikasi)
-int mainWindowIndex = WebUI.getWindowIndex()
+String mainHandle = driver.getWindowHandle()
 
-// Buka tab baru untuk Mailinator (tanpa membuka browser baru)
-WebUI.executeJavaScript("window.open('https://www.mailinator.com/v4/public/inboxes.jsp?to=$inboxName', '_blank')", null)
+String mailinatorUrl = "https://www.mailinator.com/v4/public/inboxes.jsp?to=$inboxName"
 
-WebUI.delay(2)
+// buka tab baru
+WebUI.executeJavaScript("window.open('$mailinatorUrl','_blank')", null)
 
-// Pindah ke tab Mailinator (indeks 1)
-WebUI.switchToWindowIndex(1)
+// tunggu tab baru muncul
+boolean switched = false
 
-// Ambil kode verifikasi dari Mailinator menggunakan helper (helper tidak membuka browser baru)
-MailinatorHelper mailHelper = new MailinatorHelper()
+for (int i = 0; i < 10; i++) {
+    Set<String> handles = driver.getWindowHandles()
 
-String verificationCode = mailHelper.getVerificationCodeFromCurrentTab(inboxName)
+    if (handles.size() > 1) {
+        for (String handle : handles) {
+            if (!(handle.equals(mainHandle))) {
+                driver.switchTo().window(handle)
 
-if (verificationCode == null) {
-    throw new Exception('Kode verifikasi tidak ditemukan di inbox Mailinator')
+                switched = true
+
+                break
+            }
+        }
+    }
+    
+    if (switched) {
+        break
+    }
+    
+    WebUI.delay(1)
 }
 
-println("✅ Kode verifikasi yang didapat: $verificationCode")
+assert switched : 'Mailinator tab gagal dibuka.'
+
+WebUI.waitForPageLoad(20)
 
 // ======================== STEP 4 ========================
-// Kembali ke window utama aplikasi
-WebUI.switchToWindowIndex(mainWindowIndex)
+MailinatorHelper helper = new MailinatorHelper()
+
+String verificationCode = helper.getVerificationCodeFromCurrentTab(inboxName)
+
+assert verificationCode != null : 'Verification Code tidak ditemukan di Mailinator.'
+
+println('Verification Code : ' + verificationCode)
+
+// ======================== STEP 5 ========================
+// kembali ke aplikasi
+driver.switchTo().window(mainHandle)
+
+WebUI.waitForPageLoad(10)
 
 WebUI.setText(findTestObject('WEB/Authentication/ForgotPassword/input_code'), verificationCode)
 
@@ -68,15 +83,22 @@ WebUI.setText(findTestObject('WEB/Authentication/ForgotPassword/input_newPasswor
 
 WebUI.click(findTestObject('WEB/Authentication/ForgotPassword/btn_resetPassword'))
 
-// ======================== STEP 5 ========================
-WebUI.waitForElementVisible(findTestObject('WEB/Authentication/ForgotPassword/msg_reset_password_success'), 10)
+// ======================== STEP 6 ========================
+WebUI.waitForElementVisible(findTestObject('WEB/Authentication/ForgotPassword/msg_reset_password_success'), 2)
 
-WebUI.verifyElementPresent(findTestObject('WEB/Authentication/ForgotPassword/msg_reset_password_success'), 5)
+WebUI.verifyElementPresent(findTestObject('WEB/Authentication/ForgotPassword/msg_reset_password_success'), 2)
 
-// (Opsional) Tutup tab Mailinator jika tidak diperlukan lagi
-not_run: WebUI.switchToWindowIndex(1)
+// ======================== STEP 7 ========================
+// tutup tab mailinator
+for (String handle : driver.getWindowHandles()) {
+    if (!(handle.equals(mainHandle))) {
+        driver.switchTo().window(handle)
 
-not_run: WebUI.closeWindowIndex(1)
+        driver.close()
 
-not_run: WebUI.switchToWindowIndex(mainWindowIndex)
+        break
+    }
+}
+
+driver.switchTo().window(mainHandle)
 
