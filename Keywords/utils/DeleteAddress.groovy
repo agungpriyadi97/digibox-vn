@@ -30,7 +30,7 @@ public class DeleteAddress {
      */
     @Keyword
     def deleteLastDeliveryAddress() {
-        String xpathDelete = "(//section[.//span[text()='Địa chỉ giao hàng']]//div[@class='address-operation']//span[text()='Xoá'])[last()]"
+        String xpathDelete = "(//section[.//span[text()='Địa chỉ giao hàng']]//div[@class='address-operation']//span[text()='Xoá'])[1]"
         TestObject deleteBtn = new TestObject().addProperty('xpath', ConditionType.EQUALS, xpathDelete)
         WebUI.click(deleteBtn)
         
@@ -69,7 +69,7 @@ public class DeleteAddress {
     
     @Keyword
     def deleteLastBillingAddress() {
-        String xpathDelete = "(//section[.//span[text()='Địa chỉ thanh toán']]//div[@class='address-operation']//span[text()='Xoá'])[last()]"
+        String xpathDelete = "(//section[.//span[text()='Địa chỉ thanh toán']]//div[@class='address-operation']//span[text()='Xoá'])[1]"
         TestObject deleteBtn = new TestObject().addProperty('xpath', ConditionType.EQUALS, xpathDelete)
         WebUI.click(deleteBtn)
         

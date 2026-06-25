@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>msg_success</name>
+   <name>input_mobile_phone</name>
    <tag></tag>
-   <elementGuidId>bed8dd37-9944-46d6-970a-43b030b1f81d</elementGuidId>
+   <elementGuidId>06a2b3f2-e43d-44df-87db-b7e2df62769a</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[@class='address-edit_container add-new_item']//div[label[text()='Số di dộng']]//input</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@role='alert']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

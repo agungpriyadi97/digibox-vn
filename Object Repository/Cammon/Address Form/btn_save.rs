@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>msg_success</name>
+   <name>btn_save</name>
    <tag></tag>
-   <elementGuidId>bed8dd37-9944-46d6-970a-43b030b1f81d</elementGuidId>
+   <elementGuidId>26cbb2b8-9678-4deb-8e18-4216ba380feb</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[@class='address-edit_container add-new_item']//button[contains(@class,'el-button--primary')]//span[normalize-space()='Lưu']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@role='alert']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

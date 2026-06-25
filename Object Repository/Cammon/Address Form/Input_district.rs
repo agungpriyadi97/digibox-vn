@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>msg_success</name>
+   <name>Input_district</name>
    <tag></tag>
-   <elementGuidId>bed8dd37-9944-46d6-970a-43b030b1f81d</elementGuidId>
+   <elementGuidId>6449a7dc-39a6-4c89-98dd-af180551ab84</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@role='alert']</value>
+         <value>/html/body/div[1]/div/div/div[1]/div/div[3]/div/div[2]/div/div/section[1]/section/ul/div/div[2]/div[2]/div/div/section/form/div[9]/div/div/div/input</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

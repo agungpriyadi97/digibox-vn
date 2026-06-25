@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>li_X Gia Lm</name>
+   <tag></tag>
+   <elementGuidId>aad5eeba-c7b6-4f04-90a0-32d8f13b7da4</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>(//li[@value='C260211090028684'])[3]</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[(text() = 'Xã Gia Lâm' or . = 'Xã Gia Lâm')]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>internal:text=&quot;Xã Gia Lâm&quot;i >> nth=4</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>li</value>
+      <webElementGuid>d84c7853-2711-426c-a23b-931c3ca62e39</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>el-select-dropdown__item hover</value>
+      <webElementGuid>03447c7b-467f-415e-9f37-67834abb541b</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>value</name>
+      <type>Main</type>
+      <value>C260211090028684</value>
+      <webElementGuid>4ac49c90-cba5-4737-ac19-d3fd5c00ebbf</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>label</name>
+      <type>Main</type>
+      <value>Xã Gia Lâm</value>
+      <webElementGuid>60670cba-a330-4ac1-98a6-b8589562e8b1</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Xã Gia Lâm</value>
+      <webElementGuid>f8a2d99a-37bb-4cb1-8626-0d2fea4ec0e1</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>parent</name>
+      <type>Main</type>
+      <value>md5.v1-90f5fba951d0351771883b3d870c9f23</value>
+      <webElementGuid>2568211a-667a-4668-8c8d-1c8d2729bc34</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>/html[1]/body[1]/div[@class=&quot;el-select-dropdown el-popper&quot;]/div[@class=&quot;el-scrollbar&quot;]/div[@class=&quot;el-select-dropdown__wrap el-scrollbar__wrap&quot;]/ul[@class=&quot;el-scrollbar__view el-select-dropdown__list&quot;]/li[@class=&quot;el-select-dropdown__item hover&quot;]</value>
+      <webElementGuid>ba99af89-bfae-4313-918c-59cbc76b5782</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>(//li[@value='C260211090028684'])[3]</value>
+      <webElementGuid>6f98ceca-9107-4def-8fa2-43ec7f581803</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='testRegion'])[4]/following::li[1]</value>
+      <webElementGuid>c99b699d-12d9-4050-b4d4-58d1014bb82c</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Thành phố Đà Nẵng'])[4]/following::li[2]</value>
+      <webElementGuid>78cd97dd-90df-46f2-bcb3-0385db8b7781</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Phường Thượng Cát'])[3]/preceding::li[1]</value>
+      <webElementGuid>7f49671f-afaf-48ff-8358-1c9dea91fb20</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Xã Mê Linh'])[3]/preceding::li[2]</value>
+      <webElementGuid>19f8e54a-98cd-4fa1-b49a-c0695ff048bb</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[4]/div/div/ul/li</value>
+      <webElementGuid>15d036cf-b2d4-4d81-a667-86f2bdba511e</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//li[(text() = 'Xã Gia Lâm' or . = 'Xã Gia Lâm')]</value>
+      <webElementGuid>e34dceb9-fa92-494e-a7f7-d7c52427e1d9</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>//*[@x-placement = 'top-start']//*[@label = 'Xã Gia Lâm']</value>
+      <webElementGuid>9fdda249-403d-4208-8c5c-bfd8e327fced</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

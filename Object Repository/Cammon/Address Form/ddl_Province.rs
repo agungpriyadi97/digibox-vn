@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>msg_success</name>
+   <name>ddl_Province</name>
    <tag></tag>
-   <elementGuidId>bed8dd37-9944-46d6-970a-43b030b1f81d</elementGuidId>
+   <elementGuidId>b5b967ea-3856-45c1-b816-fe2463784fdf</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>/html/body/div[1]/div/div/div[1]/div/div[3]/div/div[2]/div/div/section[1]/section/ul/div/div[2]/div[2]/div/div/section/form/div[8]/div/div/div[1]/input</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@role='alert']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

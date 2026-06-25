@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>li_TP. H Ni</name>
+   <tag></tag>
+   <elementGuidId>e40387e2-dc07-4aa5-8171-bac2bb898857</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>(//li[@value='P260211090001227'])[4]</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>li.el-select-dropdown__item.hover</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[(text() = 'TP. Hà Nội' or . = 'TP. Hà Nội')]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>internal:text=&quot;TP. Hà Nội&quot;s >> nth=3</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>li</value>
+      <webElementGuid>dabb2b87-37f8-47e5-a2b2-9c43e980b099</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>el-select-dropdown__item hover</value>
+      <webElementGuid>c510884e-5da7-465e-b5c2-726498cb2d64</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>value</name>
+      <type>Main</type>
+      <value>P260211090001227</value>
+      <webElementGuid>20f00ac1-cf26-44ae-b102-5990b7516442</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>label</name>
+      <type>Main</type>
+      <value>TP. Hà Nội</value>
+      <webElementGuid>8d72038f-b8f2-40ac-a957-4f77da945f9b</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>TP. Hà Nội</value>
+      <webElementGuid>8bf2a070-365e-4bc2-87fc-bca2e03fdf75</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>parent</name>
+      <type>Main</type>
+      <value>md5.v1-28cfa674d2bf42a15c9e8cd52e2792d4</value>
+      <webElementGuid>febf19a8-4458-499a-b4bd-56190f5a6534</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>/html[1]/body[1]/div[@class=&quot;el-select-dropdown el-popper&quot;]/div[@class=&quot;el-scrollbar&quot;]/div[@class=&quot;el-select-dropdown__wrap el-scrollbar__wrap&quot;]/ul[@class=&quot;el-scrollbar__view el-select-dropdown__list&quot;]/li[@class=&quot;el-select-dropdown__item hover&quot;]</value>
+      <webElementGuid>f6b12bc5-8f8f-45f7-b26c-ec2407849dbd</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>(//li[@value='P260211090001227'])[4]</value>
+      <webElementGuid>144bb211-a75e-44d0-b539-bb7d5573b8c0</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='`'])[1]/following::li[1]</value>
+      <webElementGuid>1a04ba72-cf06-4a05-b606-195813280590</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='TP. Hồ Chí Minh'])[4]/preceding::li[1]</value>
+      <webElementGuid>fb1c8efa-4217-4ef2-bbe1-c1cbae56f6d8</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='TP. Đà Nẵng'])[4]/preceding::li[2]</value>
+      <webElementGuid>1e2606e7-1911-42f4-91fb-5a8926fb2ad6</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[3]/div/div/ul/li</value>
+      <webElementGuid>ebef1999-fa41-4eb5-a9cf-09f26a5c2fd2</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//li[(text() = 'TP. Hà Nội' or . = 'TP. Hà Nội')]</value>
+      <webElementGuid>22829cfe-a645-4ce5-96d7-2bfc9baf16c7</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>//*[@x-placement = 'bottom-start']//*[@label = 'TP. Hà Nội']</value>
+      <webElementGuid>57f3dab9-6ae8-4dec-bb82-1f61e8ffa6d0</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>//*[@x-placement = 'top-start']//*[@label = 'TP. Hà Nội']</value>
+      <webElementGuid>db746f50-439b-4d3e-90bf-3f86ab461e72</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

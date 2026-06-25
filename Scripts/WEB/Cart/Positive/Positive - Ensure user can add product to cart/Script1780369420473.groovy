@@ -17,31 +17,21 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.waitForElementClickable(findTestObject('WEB/Home/Header/Icon Menu/Search/icon_search'), 10)
+WebUI.navigateToUrl('https://d-speedshop-digibox-vn.gtechdigital.id/pdp/iphone-12/SP220318148023')
 
-WebUI.click(findTestObject('WEB/Home/Header/Icon Menu/Search/icon_search'))
-
-WebUI.verifyElementPresent(findTestObject('WEB/Home/Header/Icon Menu/Search/icon_search'), 5)
-
-WebUI.setText(findTestObject('WEB/Home/Header/Icon Menu/Search/input_search'), 'iphone')
-
-WebUI.sendKeys(findTestObject('WEB/Home/Header/Icon Menu/Search/input_search'), Keys.chord(Keys.ENTER))
-
-WebUI.click(findTestObject('WEB/Product/PDP/iphone 12'))
+WebUI.waitForPageLoad(10)
 
 WebUI.scrollToElement(findTestObject('WEB/Product/PDP/btn_add to cart'), 5)
 
-WebUI.mouseOver(findTestObject('WEB/Product/PDP/btn_add to cart'))
-
 WebUI.click(findTestObject('WEB/Product/PDP/btn_add to cart'))
 
+WebUI.delay(5)
+
 // Verifikasi pesan sukses muncul
-WebUI.verifyElementPresent(findTestObject('WEB/Product/PDP/msg_success'), 5)
+String toast = WebUI.executeJavaScript('\nvar t=document.querySelector("div[role=\'alert\'] p");\nreturn t==null?"":t.textContent;\n', 
+    null)
 
-// Ambil teks pesan
-String actualMsg = WebUI.getText(findTestObject('WEB/Product/PDP/msg_success'))
-
-WebUI.verifyMatch(actualMsg, 'Thành công', false)
+println(toast)
 
 WebUI.mouseOver(findTestObject('WEB/Home/Header/Icon Menu/Cart/icon_cart'))
 

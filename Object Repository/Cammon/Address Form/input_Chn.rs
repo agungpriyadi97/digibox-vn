@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>input_Chn</name>
+   <tag></tag>
+   <elementGuidId>4d936d9e-3a0b-44cd-adb1-68aee99796e9</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//*[@aria-labelledby = 'el-collapse-head-526']//*[@prop = 'state']//*[@placeholder = 'Chọn']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>[aria-labelledby=&quot;el-collapse-head-526&quot;] [prop=&quot;state&quot;] [placeholder=&quot;Chọn&quot;]</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@type = 'text' and @placeholder = 'Chọn']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>#el-collapse-content-526 form div >> internal:has-text=&quot;Tỉnh/Thành Phố TP. Hà NộiTP. Hồ Chí MinhTP. Đà NẵngTP. Hải PhòngThanh HóaPhú Thọ&quot;i >> internal:attr=[placeholder=&quot;Chọn&quot;i]</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>input</value>
+      <webElementGuid>04c7b397-f497-45da-9899-0ad2b41703c3</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>type</name>
+      <type>Main</type>
+      <value>text</value>
+      <webElementGuid>3c285438-3b8b-4ec8-a285-75005f8a309e</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>readonly</name>
+      <type>Main</type>
+      <value>readonly</value>
+      <webElementGuid>df32c3de-f3b0-4cf8-89b3-f8e92d2410b9</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>autocomplete</name>
+      <type>Main</type>
+      <value>off</value>
+      <webElementGuid>4d1d6dd3-5ece-4c8f-80be-f5fd5191cbc1</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>placeholder</name>
+      <type>Main</type>
+      <value>Chọn</value>
+      <webElementGuid>2417c4dd-9483-48cf-a201-321e1489b333</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>el-input__inner</value>
+      <webElementGuid>a573f939-8a06-4b2a-9d02-1202145b7044</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>parent</name>
+      <type>Main</type>
+      <value>md5.v1-223770102f748adbdc16af8160b69f94</value>
+      <webElementGuid>1ff1b616-5c98-4a4e-a0bd-d02c92914033</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@aria-labelledby = 'el-collapse-head-526']//*[@prop = 'state']//*[@placeholder = 'Chọn']</value>
+      <webElementGuid>d2afa8e4-33e5-47f1-8019-cb2475cba955</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>//*[@aria-labelledby = 'el-collapse-head-526']//*[@prop = 'state']//*[@placeholder = 'Chọn']</value>
+      <webElementGuid>563f6b23-0162-496e-a2f9-190f37a283a7</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//input[@type = 'text' and @placeholder = 'Chọn']</value>
+      <webElementGuid>e596c868-4065-4d20-87bb-c98a78928ddf</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>//*[@aria-labelledby = 'el-collapse-head-1206']//*[@prop = 'state']//*[@placeholder = 'Chọn']</value>
+      <webElementGuid>fac50261-194d-4c9d-aeec-57d2e103a1fa</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

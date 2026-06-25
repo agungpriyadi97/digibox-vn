@@ -21,17 +21,7 @@ import utils.WindowHelper as WindowHelper
 not_run: WebUI.callTestCase(findTestCase('WEB/Authentication/Login/Positive/Positive - Ensure user can log in using valid account and password'), 
     [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.waitForElementClickable(findTestObject('WEB/Home/Header/Icon Menu/Search/icon_search'), 10)
-
-WebUI.click(findTestObject('WEB/Home/Header/Icon Menu/Search/icon_search'))
-
-WebUI.verifyElementPresent(findTestObject('WEB/Home/Header/Icon Menu/Search/icon_search'), 5)
-
-WebUI.setText(findTestObject('WEB/Home/Header/Icon Menu/Search/input_search'), 'iphone')
-
-WebUI.sendKeys(findTestObject('WEB/Home/Header/Icon Menu/Search/input_search'), Keys.chord(Keys.ENTER))
-
-WebUI.click(findTestObject('WEB/Product/PDP/iphone 12'))
+WebUI.navigateToUrl('https://d-speedshop-digibox-vn.gtechdigital.id/pdp/iphone-12/SP220318148023')
 
 boolean isUrlMatch = CustomKeywords.'utils.WindowHelper.clickAndVerifyNewTab'(findTestObject('WEB/Product/PDP/btn_chat_zalo_with_buy_now'), 
     'https://zalo.me/')

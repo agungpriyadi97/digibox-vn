@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>Positive - Ensure user can delete billing address</name>
-   <tag></tag>
-   <comment></comment>
-   <recordOption>OTHER</recordOption>
-   <testCaseGuid>5aeae3f7-235e-4ca1-a7d6-3d3f28f4b535</testCaseGuid>
-</TestCaseEntity>

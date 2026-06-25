@@ -44,6 +44,8 @@ WebUI.click(findTestObject('WEB/Checkout/OrderSummary/button_thanh_thon_2'))
 
 WebUI.waitForPageLoad(30)
 
+WebUI.delay(3)
+
 // ========================= VERIFIKASI GATEWAY ZALOPAY =========================
 WebUI.waitForElementVisible(findTestObject('WEB/ZaloPayGateway/merchant_logo'), 10)
 

@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>msg_success</name>
+   <name>opt_DropdownValueCummune</name>
    <tag></tag>
-   <elementGuidId>bed8dd37-9944-46d6-970a-43b030b1f81d</elementGuidId>
+   <elementGuidId>544bd51e-dee3-46ed-871e-df95633d17f6</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@role='alert']</value>
+         <value>/html/body/div[4]/div[1]/div[1]/ul/li[1]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
