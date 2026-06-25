@@ -37,13 +37,13 @@ public class AddressHelper {
 		
 		@Keyword
 		def fillAddressForm(Map<String, String> addressData) {
-			WebUI.setText(findTestObject('WEB/Address/Add Address Delivery/input_first_name'), addressData.firstName)
-			WebUI.setText(findTestObject('WEB/Address/Add Address Delivery/input_last_name'), addressData.lastName)
-			WebUI.setText(findTestObject('WEB/Address/Add Address Delivery/input_mobile_phone'), addressData.mobilePhone)
-			WebUI.setText(findTestObject('WEB/Address/Add Address Delivery/input_email'), addressData.email)
-			WebUI.setText(findTestObject('WEB/Address/Add Address Delivery/input_address'), addressData.address)
-			WebUI.clearText(findTestObject('WEB/Address/Add Address Delivery/input_zip_code'))
-			WebUI.setText(findTestObject('WEB/Address/Add Address Delivery/input_zip_code'), addressData.zipCode)
+			WebUI.setText(findTestObject('Cammon/Address Form/input_first_name'), addressData.firstName)
+			WebUI.setText(findTestObject('Cammon/Address Form/input_last_name'), addressData.lastName)
+			WebUI.setText(findTestObject('Cammon/Address Form/input_mobile_phone'), addressData.mobilePhone)
+			WebUI.setText(findTestObject('Cammon/Address Form/input_email'), addressData.email)
+			WebUI.setText(findTestObject('Cammon/Address Form/input_address'), addressData.address)
+			WebUI.clearText(findTestObject('Cammon/Address Form/input_zip_code'))
+			WebUI.setText(findTestObject('Cammon/Address Form/input_zip_code'), addressData.zipCode)
 			WebUI.waitForElementClickable(findTestObject('WEB/Address/Add Address Delivery/btn_delivery_save'), 10)
 			WebUI.click(findTestObject('WEB/Address/Add Address Delivery/btn_delivery_save'))
 			WebUI.waitForPageLoad(10)

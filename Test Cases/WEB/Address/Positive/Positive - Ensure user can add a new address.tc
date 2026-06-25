@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>Positive - Ensure user can add a new address</name>
-   <tag></tag>
-   <comment></comment>
-   <recordOption>OTHER</recordOption>
-   <testCaseGuid>1a556741-d9e8-4171-a337-a300eb1b9265</testCaseGuid>
-</TestCaseEntity>

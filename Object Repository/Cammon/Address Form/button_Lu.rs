@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>button_Lu</name>
+   <tag></tag>
+   <elementGuidId>d88cd55b-3e19-4f80-9f99-818b7c3ebf78</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//*[@aria-labelledby = 'el-collapse-head-1206']//*[@class and contains(concat(' ', normalize-space(@class), ' '), ' el-button--primary ')]</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>[aria-labelledby=&quot;el-collapse-head-1206&quot;] .el-button--primary</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>internal:role=button[name=&quot;Lưu&quot;i]</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>54431170-3a76-46cc-9241-0dd6abf1d7eb</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>type</name>
+      <type>Main</type>
+      <value>primary</value>
+      <webElementGuid>9ca562c0-2d2b-406a-87cc-0dd706c87ad3</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>el-button el-button--primary el-button--small gt-button</value>
+      <webElementGuid>ca5e4f0a-2800-4416-af46-6f20d96af35d</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>size</name>
+      <type>Main</type>
+      <value>small</value>
+      <webElementGuid>595961e4-a6f0-43ad-b540-71c3135804d0</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Lưu
+    </value>
+      <webElementGuid>adc056a8-7cba-4ab9-85a2-ae917b839050</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>parent</name>
+      <type>Main</type>
+      <value>md5.v1-0761157caa10d43278c919e695592ad6</value>
+      <webElementGuid>84642591-5a1d-4d86-aba0-9100ac9e7d8d</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@aria-labelledby = 'el-collapse-head-1206']//*[@class and contains(concat(' ', normalize-space(@class), ' '), ' el-button--primary ')]</value>
+      <webElementGuid>4447fa83-9211-4afb-b77f-202e6ed8d36a</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>//*[@aria-labelledby = 'el-collapse-head-1206']//*[@class and contains(concat(' ', normalize-space(@class), ' '), ' el-button--primary ')]</value>
+      <webElementGuid>744fbc34-50cd-4fd8-bc40-51ef7397ba6e</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//button[@type = 'primary' and (text() = 'Lưu
+    ' or . = 'Lưu
+    ')]</value>
+      <webElementGuid>a2f9f833-0ab5-4c69-bc14-7f62894ea993</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>Positive - Ensure user can delete address</name>
-   <tag></tag>
-   <comment></comment>
-   <recordOption>OTHER</recordOption>
-   <testCaseGuid>b5764bd1-4714-4430-b751-7d8bdcbae4c1</testCaseGuid>
-</TestCaseEntity>

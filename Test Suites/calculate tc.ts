@@ -15,35 +15,35 @@
       <guid>6cc57d68-5fc4-4b06-9089-88b413ec99e0</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/Address/Positive/Positive - Ensure user can add a new address</testCaseId>
+      <testCaseId>Test Cases/WEB/Address Management/Address My Account/Shipping/Positive/Positive - Ensure user can add new shipping address successfully</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
       <guid>769de806-1ea5-4f68-9e4d-cdbfbb4f401c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/Address/Positive/Positive - Ensure user can add a new billing address</testCaseId>
+      <testCaseId>Test Cases/WEB/Address Management/Address My Account/Billing/Positive/Positive - Ensure user can add new billing address successfully</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
       <guid>f3b7fdb7-de32-4894-a82c-fd7e5baaa3d8</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/Address/Positive/Positive - Ensure user can delete address</testCaseId>
+      <testCaseId>Test Cases/WEB/Address Management/Address My Account/Shipping/Positive/Positive - Ensure user can delete shipping address successfully</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
       <guid>3af9c297-b430-45fa-91c0-25a521652d4b</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/Address/Positive/Positive - Ensure user can delete billing address</testCaseId>
+      <testCaseId>Test Cases/WEB/Address Management/Address My Account/Billing/Positive/Positive - Ensure user can delete billing address successfully</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
       <guid>a9b049c7-8f51-4611-9323-a8e6cdaa3258</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/Address/Positive/Positive - Ensure user can edit existing address</testCaseId>
+      <testCaseId>Test Cases/WEB/Address Management/Address My Account/Shipping/Positive/Positive - Ensure user can edit shipping address successfully</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>

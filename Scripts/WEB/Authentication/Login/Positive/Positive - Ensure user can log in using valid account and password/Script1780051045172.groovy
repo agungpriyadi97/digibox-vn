@@ -31,4 +31,3 @@ WebUI.waitForElementVisible(findTestObject('WEB/Home/Header/Icon Menu/Account/ic
 WebUI.click(findTestObject('WEB/Home/Header/Icon Menu/Account/icon-account'))
 
 WebUI.verifyElementPresent(findTestObject('WEB/Home/Header/Icon Menu/Account/txt_verify_account'), 10)
-

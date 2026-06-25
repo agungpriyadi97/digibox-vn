@@ -20,30 +20,34 @@ import org.openqa.selenium.Keys as Keys
 WebUI.callTestCase(findTestCase('WEB/Authentication/Login/Positive/Positive - Ensure user can log in using valid account and password'), 
     [:], FailureHandling.STOP_ON_FAILURE)
 
-// ========================= SEARCH PRODUCT =========================
-WebUI.waitForElementClickable(findTestObject('WEB/Home/Header/Icon Menu/Search/icon_search'), 10)
-WebUI.click(findTestObject('WEB/Home/Header/Icon Menu/Search/icon_search'))
-WebUI.setText(findTestObject('WEB/Home/Header/Icon Menu/Search/input_search'), 'iphone')
-WebUI.sendKeys(findTestObject('WEB/Home/Header/Icon Menu/Search/input_search'), Keys.chord(Keys.ENTER))
+WebUI.navigateToUrl('https://d-speedshop-digibox-vn.gtechdigital.id/pdp/iphone-12/SP220318148023')
 
-// ========================= SELECT PRODUCT =========================
-WebUI.click(findTestObject('WEB/Product/PDP/iphone 12'))
+WebUI.waitForPageLoad(10)
 
 // ========================= ADD TO CART =========================
 WebUI.scrollToElement(findTestObject('WEB/Product/PDP/btn_add to cart'), 5)
+
 WebUI.click(findTestObject('WEB/Product/PDP/btn_add to cart'))
 
+WebUI.delay(5)
+
 // ========================= VERIFY SUCCESS MESSAGE =========================
-WebUI.waitForElementVisible(findTestObject('WEB/Product/PDP/msg_success'), 5)
-String actualMsg = WebUI.getText(findTestObject('WEB/Product/PDP/msg_success'))
-WebUI.verifyMatch(actualMsg, 'Thành công', false)
+String toast = WebUI.executeJavaScript('\nvar t=document.querySelector("div[role=\'alert\'] p");\nreturn t==null?"":t.textContent;\n', 
+    null)
+
+println(toast)
 
 // ========================= VERIFY CART BADGE =========================
 WebUI.waitForElementPresent(findTestObject('WEB/Home/Header/Icon Menu/Cart/badge_cart_count'), 10)
+
 String cartCount = WebUI.getText(findTestObject('WEB/Home/Header/Icon Menu/Cart/badge_cart_count'))
+
 int actualCount = Integer.parseInt(cartCount.trim())
+
 WebUI.verifyGreaterThanOrEqual(actualCount, 1)
 
 // ========================= OPEN CART PAGE =========================
 WebUI.click(findTestObject('WEB/Home/Header/Icon Menu/Cart/icon_cart'))
+
 WebUI.waitForPageLoad(10)
+

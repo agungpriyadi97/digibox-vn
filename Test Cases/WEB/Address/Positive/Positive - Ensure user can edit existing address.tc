@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Memastikan user dapat mengubah alamat yang sudah ada</description>
-   <name>Positive - Ensure user can edit existing address</name>
-   <tag></tag>
-   <comment></comment>
-   <recordOption>OTHER</recordOption>
-   <testCaseGuid>59786a63-cc79-4330-bdb5-df69b2a1a695</testCaseGuid>
-</TestCaseEntity>

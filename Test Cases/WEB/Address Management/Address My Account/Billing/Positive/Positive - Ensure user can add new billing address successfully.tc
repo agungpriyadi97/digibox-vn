@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Positive - Ensure user can add new billing address successfully</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>31be8e95-1ae4-4830-95eb-fb5fb4e157cd</testCaseGuid>
+</TestCaseEntity>
