@@ -25,6 +25,7 @@ katalon_digiboxvn_test:
   before_script:
     # Bersihkan folder Reports dari sisa pipeline sebelumnya agar artifact tidak menumpuk
     - rm -rf Reports/* || true
+    - rm -rf Screenshot/* || true
     # Force apt to ignore the unverified Edge repository so it doesn't return exit code 1
     - apt-get update -o Acquire::AllowInsecureRepositories=true -o Doomsday::Ignore=true -y || true
     # Install FFmpeg cleanly from standard Ubuntu repos to enable video recording
@@ -65,6 +66,7 @@ katalon_digiboxvn_test:
       -reportFileName="Chrome_Report" \
       --config \
       -webui.autoUpdateDrivers=true \
+      -webui.chrome.args="--disable-dev-shm-usage,--no-sandbox" \
       || CHROME_EXIT=$?
 
     #################################
