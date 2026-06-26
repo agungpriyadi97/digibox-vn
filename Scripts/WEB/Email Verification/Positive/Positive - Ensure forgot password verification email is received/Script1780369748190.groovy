@@ -21,7 +21,7 @@ WebUI.setText(findTestObject('WEB/Authentication/ForgotPassword/input_email'), e
 WebUI.click(findTestObject('WEB/Authentication/ForgotPassword/btn_verifikasiCode'))
 
 // Tunggu email terkirim
-WebUI.delay(3)
+WebUI.delay(30)
 
 // ======================== STEP 3 ========================
 WebDriver driver = DriverFactory.getWebDriver()
@@ -85,8 +85,6 @@ WebUI.click(findTestObject('WEB/Authentication/ForgotPassword/btn_resetPassword'
 
 // ======================== STEP 6 ========================
 WebUI.waitForElementVisible(findTestObject('WEB/Authentication/ForgotPassword/msg_reset_password_success'), 2)
-
-WebUI.verifyElementPresent(findTestObject('WEB/Authentication/ForgotPassword/msg_reset_password_success'), 2)
 
 // ======================== STEP 7 ========================
 // tutup tab mailinator

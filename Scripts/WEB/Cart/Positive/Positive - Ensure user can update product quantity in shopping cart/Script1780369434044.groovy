@@ -21,39 +21,69 @@ import org.openqa.selenium.Keys as Keys
 WebUI.callTestCase(findTestCase('WEB/Authentication/Login/Positive/Positive - Ensure user can log in using valid account and password'), 
     [:], FailureHandling.STOP_ON_FAILURE)
 
-// ========================= PASTIKAN KERANJANG TIDAK KOSONG =========================
+//====================================================
+// PASTIKAN KERANJANG TIDAK KOSONG
+//====================================================
+import org.openqa.selenium.By
+import org.openqa.selenium.WebDriver
+import com.kms.katalon.core.webui.driver.DriverFactory
+
 int cartCount = 0
 
-boolean isBadgePresent = WebUI.verifyElementPresent(findTestObject('WEB/Home/Header/Icon Menu/Cart/badge_cart_count'), 3, 
-    FailureHandling.OPTIONAL)
+WebDriver driver = DriverFactory.getWebDriver()
+
+List badgeElements = driver.findElements(
+	By.xpath("//span[contains(@class,'cart-count')]")
+)
+
+boolean isBadgePresent = badgeElements.size() > 0
 
 if (isBadgePresent) {
-    String badgeText = WebUI.getText(findTestObject('WEB/Home/Header/Icon Menu/Cart/badge_cart_count')).trim()
 
-    cartCount = Integer.parseInt(badgeText)
+	String badgeText = badgeElements.get(0).getText().trim()
+
+	// antisipasi badge seperti "9+"
+	badgeText = badgeText.replaceAll("[^0-9]", "")
+
+	if (!badgeText.isEmpty()) {
+		cartCount = Integer.parseInt(badgeText)
+	}
 }
 
-// Jika keranjang kosong (badge tidak ada atau bernilai 0), tambah 1 produk
-if (!(isBadgePresent) || (cartCount == 0)) {
-    // Cari produk dan tambah ke keranjang
-    WebUI.waitForElementClickable(findTestObject('WEB/Home/Header/Icon Menu/Search/icon_search'), 10)
+println("====================================")
+println("Badge Present : " + isBadgePresent)
+println("Cart Count    : " + cartCount)
+println("====================================")
 
-    WebUI.click(findTestObject('WEB/Home/Header/Icon Menu/Search/icon_search'))
+//====================================================
+// JIKA KERANJANG KOSONG → TAMBAH PRODUK
+//====================================================
+if (cartCount == 0) {
 
-    WebUI.setText(findTestObject('WEB/Home/Header/Icon Menu/Search/input_search'), 'iphone')
+	println("Cart kosong, menambahkan produk...")
 
-    WebUI.sendKeys(findTestObject('WEB/Home/Header/Icon Menu/Search/input_search'), Keys.chord(Keys.ENTER))
+	WebUI.navigateToUrl("https://d-speedshop-digibox-vn.gtechdigital.id/pdp/iphone-12/SP220318148023")
 
-    WebUI.click(findTestObject('WEB/Product/PDP/iphone 12'))
+	WebUI.waitForPageLoad(30)
 
-    WebUI.scrollToElement(findTestObject('WEB/Product/PDP/btn_add to cart'), 5)
+	WebUI.scrollToElement(findTestObject('WEB/Product/PDP/btn_add to cart'), 5)
 
-    WebUI.click(findTestObject('WEB/Product/PDP/btn_add to cart'))
+	WebUI.waitForElementClickable(findTestObject('WEB/Product/PDP/btn_add to cart'), 20)
 
-    WebUI.waitForElementVisible(findTestObject('WEB/Product/PDP/msg_success'), 5)
+	WebUI.mouseOver(findTestObject('WEB/Product/PDP/btn_add to cart'))
 
-    WebUI.delay(2 // Tunggu badge update
-        )
+	WebUI.enhancedClick(findTestObject('WEB/Product/PDP/btn_add to cart'))
+
+	WebUI.waitForElementVisible(findTestObject('WEB/Product/PDP/msg_success'), 20)
+
+	WebUI.delay(2)
+
+	println("Produk berhasil ditambahkan.")
+
+} else {
+
+	println("Cart sudah berisi " + cartCount + " item.")
+
 }
 
 // ========================= BUKA HALAMAN KERANJANG =========================
