@@ -174,7 +174,7 @@ WebUI.click(findTestObject('WEB/Address/Billing Add New Address/input_PhngX_el-i
 
 WebUI.waitForElementClickable(findTestObject('WEB/Address/Billing Add New Address/li_Phng Hi Vn'), 10)
 
-not_run: WebUI.mouseOver(findTestObject('WEB/Address/Billing Add New Address/li_Phng Hi Vn'))
+WebUI.mouseOver(findTestObject('WEB/Address/Billing Add New Address/li_Phng Hi Vn'))
 
 WebUI.click(findTestObject('WEB/Address/Billing Add New Address/li_Phng Hi Vn'))
 
