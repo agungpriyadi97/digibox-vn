@@ -6,12 +6,11 @@
    <elementGuidId>883b18ad-e524-4d87-a0ac-4787391b5be7</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>(//li[@value='P260211090001228'])[4]</value>
+         <key>CSS</key>
       </entry>
       <entry>
-         <key>CSS</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>(//ul[contains(@class,'el-select-dropdown__list')]/li[@label='TP. Hồ Chí Minh'])[last()]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -29,7 +28,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>li</value>
-      <webElementGuid>5f25cb07-5e7f-4a5a-b40c-393a506fa40c</webElementGuid>
+      <webElementGuid>949371fb-6671-4437-8418-d13ba97d7732</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -37,7 +36,7 @@
       <name>class</name>
       <type>Main</type>
       <value>el-select-dropdown__item hover</value>
-      <webElementGuid>0d3bfa7b-2748-4019-8b0e-8438ac503031</webElementGuid>
+      <webElementGuid>bb034f1e-c3aa-4110-a7fb-2601922d955c</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -45,7 +44,7 @@
       <name>value</name>
       <type>Main</type>
       <value>P260211090001228</value>
-      <webElementGuid>0fe17760-25d1-4a47-a43f-5e0335aebf6f</webElementGuid>
+      <webElementGuid>561e0e6d-3d88-43cf-bfe6-961bb63231d6</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -53,7 +52,7 @@
       <name>label</name>
       <type>Main</type>
       <value>TP. Hồ Chí Minh</value>
-      <webElementGuid>467a57e2-8978-43bc-b2e1-54a32705613b</webElementGuid>
+      <webElementGuid>2896ad68-59b9-42e4-8b13-7c5f149ede4e</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -61,7 +60,7 @@
       <name>text</name>
       <type>Main</type>
       <value>TP. Hồ Chí Minh</value>
-      <webElementGuid>e2ba380c-cce0-4e54-b30e-e6230e68ed51</webElementGuid>
+      <webElementGuid>38a4e5c8-9acf-4b76-95b1-2a52fdb576b3</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -69,7 +68,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>/html[1]/body[1]/div[@class=&quot;el-select-dropdown el-popper&quot;]/div[@class=&quot;el-scrollbar&quot;]/div[@class=&quot;el-select-dropdown__wrap el-scrollbar__wrap&quot;]/ul[@class=&quot;el-scrollbar__view el-select-dropdown__list&quot;]/li[@class=&quot;el-select-dropdown__item hover&quot;]</value>
-      <webElementGuid>ece76d37-7a17-4707-87fd-267b98d18079</webElementGuid>
+      <webElementGuid>915a91d4-6a3a-401e-aca8-f206a7e6817b</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -77,7 +76,7 @@
       <name>xpath:attributes</name>
       <type>Main</type>
       <value>(//li[@value='P260211090001228'])[4]</value>
-      <webElementGuid>9513b2f1-af58-41b2-a73c-5a6b350d646d</webElementGuid>
+      <webElementGuid>fe08aa40-3a32-4cdc-8049-aa77fc9965f3</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -85,7 +84,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='TP. Hà Nội'])[4]/following::li[1]</value>
-      <webElementGuid>41b08349-05b0-4a45-8346-bb6807677c18</webElementGuid>
+      <webElementGuid>9216e550-6283-4296-a9dc-61aa09347e90</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -93,7 +92,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='`'])[1]/following::li[2]</value>
-      <webElementGuid>4561d1c0-1a93-4b89-9031-cdeecb7d2668</webElementGuid>
+      <webElementGuid>2873767d-931b-41ef-bd44-292d4638da79</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -101,7 +100,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='TP. Đà Nẵng'])[4]/preceding::li[1]</value>
-      <webElementGuid>282cc290-9114-4d7c-9f98-a8094d286fe3</webElementGuid>
+      <webElementGuid>8e997a6a-0b29-463a-81ac-68b24220b76a</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -109,7 +108,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='TP. Hải Phòng'])[4]/preceding::li[2]</value>
-      <webElementGuid>e3d4c36f-c472-4311-91eb-a21342be8c67</webElementGuid>
+      <webElementGuid>03966bd4-064f-43d7-9f1f-c848fdb6b9e5</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -117,7 +116,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//div[4]/div/div/ul/li[2]</value>
-      <webElementGuid>131de484-478b-40e4-b625-6f1cdec1f78f</webElementGuid>
+      <webElementGuid>65fa3b45-1ec9-4434-b670-5fb7022a3804</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -125,6 +124,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//li[(text() = 'TP. Hồ Chí Minh' or . = 'TP. Hồ Chí Minh')]</value>
-      <webElementGuid>78ec6b06-5340-4250-ba41-8241db2a8cb4</webElementGuid>
+      <webElementGuid>dd0a435a-ba21-4635-95da-ed570a19f45a</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

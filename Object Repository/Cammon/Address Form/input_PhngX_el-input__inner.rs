@@ -6,12 +6,11 @@
    <elementGuidId>70d1dd8b-42e1-4fcc-ae03-bf319f5aff56</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>(//input[@type='text'])[20]</value>
+         <key>CSS</key>
       </entry>
       <entry>
-         <key>CSS</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//div[@class='address-edit_container add-new_item']//div[label[text()='Phường/Xã']]//input</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -29,7 +28,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>input</value>
-      <webElementGuid>ed38a57a-0996-4485-8aaa-160d92f89488</webElementGuid>
+      <webElementGuid>a425ff26-67f3-4047-95a9-8ede80e0add9</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -37,7 +36,7 @@
       <name>type</name>
       <type>Main</type>
       <value>text</value>
-      <webElementGuid>2634dde5-bc22-4502-9233-65d8378490d9</webElementGuid>
+      <webElementGuid>334163bc-bae5-4583-9cbf-d99426c75a8b</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -45,7 +44,7 @@
       <name>readonly</name>
       <type>Main</type>
       <value>readonly</value>
-      <webElementGuid>978ade53-f042-44f7-a509-e54ad19b39ea</webElementGuid>
+      <webElementGuid>52d8c84f-9ac3-45cd-be0a-f396c63638c4</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -53,7 +52,7 @@
       <name>autocomplete</name>
       <type>Main</type>
       <value>off</value>
-      <webElementGuid>4c6e7f08-4b9a-450d-a653-31dd8310c515</webElementGuid>
+      <webElementGuid>f25f8844-0201-4fe7-9a44-97b8eff08138</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -61,7 +60,7 @@
       <name>placeholder</name>
       <type>Main</type>
       <value>Chọn</value>
-      <webElementGuid>6c0d91f6-0342-488e-9156-9952fb3d0156</webElementGuid>
+      <webElementGuid>0006eea3-5b76-4eea-bfb1-af24b035a7a0</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -69,7 +68,7 @@
       <name>class</name>
       <type>Main</type>
       <value>el-input__inner</value>
-      <webElementGuid>8e6376fd-7bce-446c-8392-a780c589e950</webElementGuid>
+      <webElementGuid>5309f07a-e06e-41af-9830-c2df40da5342</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -77,7 +76,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;el-collapse-content-5245&quot;)/div[@class=&quot;el-collapse-item__content&quot;]/div[@class=&quot;address-edit_container add-new_item&quot;]/section[1]/form[@class=&quot;el-form gt-simple-form checkout-form el-form--label-top&quot;]/div[@class=&quot;el-form-item gt-form-item is-required el-form-item--small&quot;]/div[@class=&quot;el-form-item__content&quot;]/div[@class=&quot;el-select gt-select width_fill el-select--small&quot;]/div[@class=&quot;el-input el-input--small el-input--suffix&quot;]/input[@class=&quot;el-input__inner&quot;]</value>
-      <webElementGuid>aa80b46c-49dc-421d-a43a-699c6ba0b13d</webElementGuid>
+      <webElementGuid>83d6fe23-9191-4699-8973-1cac0adf993f</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -85,7 +84,7 @@
       <name>xpath:attributes</name>
       <type>Main</type>
       <value>(//input[@type='text'])[20]</value>
-      <webElementGuid>1c7a3215-dac9-4ca9-891c-c7c1752601f6</webElementGuid>
+      <webElementGuid>1bb0f792-0540-486f-ac61-f1fa91fddcc4</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -93,7 +92,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='el-collapse-content-5245']/div/div/section/form/div[9]/div/div/div/input</value>
-      <webElementGuid>8b6cabb5-560c-42bf-9e14-5146a60926c0</webElementGuid>
+      <webElementGuid>8a7d911a-1ab0-40a9-9600-205445870726</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -101,7 +100,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//div[2]/div[2]/div/div/section/form/div[9]/div/div/div/input</value>
-      <webElementGuid>0be8fff0-82a8-49c9-8cd5-6e2230429579</webElementGuid>
+      <webElementGuid>c0457d64-8b18-4b89-a91b-9225a6d6c6bc</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -109,6 +108,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//input[@type = 'text' and @placeholder = 'Chọn']</value>
-      <webElementGuid>bf2d97ef-4fd9-42bf-bc22-7ab9b9e9101b</webElementGuid>
+      <webElementGuid>8207e619-c95e-444f-baf1-5829f404db65</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>
