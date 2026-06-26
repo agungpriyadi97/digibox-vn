@@ -6,121 +6,107 @@ stages:
   - test
 
 variables:
-  # Ensures the job continues through all browser types even if one fails
   CONTINUE_ON_FAILURE: "true"
-  # CRITICAL: Increase shared memory size for Chrome Headless in Docker
-  # This prevents the "Out of Memory" crashes on heavy pages like Digibox
-  GS_OPTIONS: "-Xmx2048m -Xms512m -Djava.shm.size=2g"
+  # Corrected to use KATALON_OPTS so the Java runtime engine actually reads it
+  KATALON_OPTS: "-Xmx2048m -Xms512m"
 
 katalon_digiboxvn_test:
   stage: test
   tags:
     - infra
-  # Extended timeout for sequential cross-browser execution
   timeout: 12h  
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
     - if: $CI_PIPELINE_SOURCE == "web"
   
   before_script:
-    # Bersihkan folder Reports dari sisa pipeline sebelumnya agar artifact tidak menumpuk
     - rm -rf Reports/* || true
     - rm -rf Screenshot/* || true
-    # Force apt to ignore the unverified Edge repository so it doesn't return exit code 1
     - apt-get update -o Acquire::AllowInsecureRepositories=true -o Doomsday::Ignore=true -y || true
-    # Install FFmpeg cleanly from standard Ubuntu repos to enable video recording
     - apt-get install -y --allow-unauthenticated ffmpeg
     - ffmpeg -version
 
   script:
-  - curl ifconfig.me
+    - curl ifconfig.me
+    - |
+      # ---------- Test Suite Selection ----------
+      if [ -z "$TEST_PATH" ]; then
+        FINAL_PATH="Test Suites/WEB/Web_Test_Suite_Collection/Regression_Digiboxvn_Web"
+        ARG_TYPE="-testSuiteCollectionPath"
+      else
+        FINAL_PATH=$(echo "$TEST_PATH" | cut -d'=' -f2)
+        ARG_TYPE=$(echo "$TEST_PATH" | cut -d'=' -f1)
+      fi
 
-  - |
+      #################################
+      # Chrome
+      #################################
+      CHROME_EXIT=0
+      echo "===== Chrome Headless ====="
 
-    # ---------- Test Suite ----------
-    if [ -z "$TEST_PATH" ]; then
-      FINAL_PATH="Test Suites/WEB/Web_Test_Suite_Collection/Regression_Digiboxvn_Web"
-      ARG_TYPE="-testSuiteCollectionPath"
-    else
-      FINAL_PATH=$(echo "$TEST_PATH" | cut -d'=' -f2)
-      ARG_TYPE=$(echo "$TEST_PATH" | cut -d'=' -f1)
-    fi
+      katalonc.sh \
+        -noSplash \
+        -runMode=console \
+        -projectPath="$CI_PROJECT_DIR/digibox-vn.prj" \
+        -retry=0 \
+        -apiKey="$KATALON_API_KEY" \
+        "$ARG_TYPE=$FINAL_PATH" \
+        -browserType="Chrome (headless)" \
+        -reportFolder="Reports/Chrome_Reports" \
+        -reportFileName="Chrome_Report" \
+        --config \
+        -webui.autoUpdateDrivers=true \
+        -webui.chrome.args="--disable-dev-shm-usage,--no-sandbox" \
+        || CHROME_EXIT=$?
 
-    #################################
-    # Chrome
-    #################################
+      #################################
+      # Firefox (Fixed Memory Overrides)
+      #################################
+      FIREFOX_EXIT=0
+      echo "===== Firefox Headless ====="
 
-    CHROME_EXIT=0
+      katalonc.sh \
+        -noSplash \
+        -runMode=console \
+        -projectPath="$CI_PROJECT_DIR/digibox-vn.prj" \
+        -retry=0 \
+        -apiKey="$KATALON_API_KEY" \
+        "$ARG_TYPE=$FINAL_PATH" \
+        -browserType="Firefox (headless)" \
+        -reportFolder="Reports/Firefox_Reports" \
+        -reportFileName="Firefox_Report" \
+        --config \
+        -webui.autoUpdateDrivers=true \
+        --args="-profile-mini" \
+        || FIREFOX_EXIT=$?
 
-    echo "===== Chrome Headless ====="
+      #################################
+      # Summary & Final Assessment
+      #################################
+      echo ""
+      echo "========== RESULT =========="
+      echo "Chrome  : $CHROME_EXIT"
+      echo "Firefox : $FIREFOX_EXIT"
 
-    katalonc.sh \
-      -noSplash \
-      -runMode=console \
-      -projectPath="$CI_PROJECT_DIR/digibox-vn.prj" \
-      -retry=0 \
-      -apiKey="$KATALON_API_KEY" \
-      "$ARG_TYPE=$FINAL_PATH" \
-      -browserType="Chrome (headless)" \
-      -reportFolder="Reports/Chrome_Reports" \
-      -reportFileName="Chrome_Report" \
-      --config \
-      -webui.autoUpdateDrivers=true \
-      -webui.chrome.args="--disable-dev-shm-usage,--no-sandbox" \
-      || CHROME_EXIT=$?
+      # Execute video clean-up INSIDE the script block before exiting
+      echo "Cleaning old videos..."
+      find Reports/ -type f -name "*.mp4" -mtime +30 -exec rm -f {} \; || true
 
-    #################################
-    # Firefox
-    #################################
+      PIPELINE_EXIT=0
+      [ "$CHROME_EXIT" -ne 0 ] && PIPELINE_EXIT=1
+      [ "$FIREFOX_EXIT" -ne 0 ] && PIPELINE_EXIT=1
 
-    FIREFOX_EXIT=0
+      if [ "$PIPELINE_EXIT" -eq 0 ]; then
+        echo "Pipeline PASSED"
+      else
+        echo "Pipeline FAILED"
+      fi
 
-    echo "===== Firefox Headless ====="
-
-    katalonc.sh \
-      -noSplash \
-      -runMode=console \
-      -projectPath="$CI_PROJECT_DIR/digibox-vn.prj" \
-      -retry=0 \
-      -apiKey="$KATALON_API_KEY" \
-      "$ARG_TYPE=$FINAL_PATH" \
-      -browserType="Firefox (headless)" \
-      -reportFolder="Reports/Firefox_Reports" \
-      -reportFileName="Firefox_Report" \
-      --config \
-      -webui.autoUpdateDrivers=true \
-      || FIREFOX_EXIT=$?
-
-    #################################
-    # Summary
-    #################################
-
-    echo ""
-    echo "========== RESULT =========="
-    echo "Chrome  : $CHROME_EXIT"
-    echo "Firefox : $FIREFOX_EXIT"
-
-    PIPELINE_EXIT=0
-
-    [ "$CHROME_EXIT" -ne 0 ] && PIPELINE_EXIT=1
-    [ "$FIREFOX_EXIT" -ne 0 ] && PIPELINE_EXIT=1
-
-    if [ "$PIPELINE_EXIT" -eq 0 ]; then
-      echo "Pipeline PASSED"
-    else
-      echo "Pipeline FAILED"
-    fi
-
-    exit $PIPELINE_EXIT
-
-  - echo "Cleaning old videos..."
-  - find Reports/ -type f -name "*.mp4" -mtime +30 -exec rm -f {} \; || true
+      exit $PIPELINE_EXIT
 
   artifacts:
-    # 'always' ensures reports are uploaded even if tests fail
     when: always
     paths:
       - Reports/
       - Screenshot/
-    # Reports kept for a maximum of 2 months to align with your retention settings
     expire_in: 2 mos
