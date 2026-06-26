@@ -32,7 +32,7 @@ katalon_digiboxvn_test:
 
     # Dependency
     - apt-get update || true
-    - apt-get install -y ffmpeg curl || true
+    - apt-get install -y ffmpeg curl firefox-esr geckodriver || true
 
     # Diagnostic
     - google-chrome --version || true
@@ -126,7 +126,7 @@ katalon_digiboxvn_test:
 
       echo "=============================="
 
-      find Reports -type f | head -100 || true
+      find Reports -type f | sort || true
 
       echo "=============================="
 
@@ -177,10 +177,29 @@ katalon_digiboxvn_test:
       else
           echo "Firefox : FAILED"
       fi
-
       echo "======================================="
-      exit $PIPELINE_EXIT
 
+      echo ""
+      echo "========== PIPELINE RESULT =========="
+
+      if [ "$PIPELINE_EXIT" -eq 0 ]; then
+          echo "PIPELINE : PASSED"
+      else
+          echo "PIPELINE : FAILED"
+      fi
+
+      echo "====================================="
+      echo ""
+      echo "========== FINAL EXIT =========="
+
+      echo "Chrome Exit  : $CHROME_EXIT"
+      echo "Firefox Exit : $FIREFOX_EXIT"
+      echo "Pipeline Exit: $PIPELINE_EXIT"
+
+      echo "==============================="
+
+      exit $PIPELINE_EXIT
+      
     - find Reports -type f -name "*.mp4" -mtime +30 -exec rm -f {} \; || true
 
   artifacts:
