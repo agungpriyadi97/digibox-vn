@@ -32,7 +32,7 @@ katalon_digiboxvn_test:
 
     # Dependency
     - apt-get update || true
-    - apt-get install -y xvfb ffmpeg curl || true
+    - apt-get install -y ffmpeg curl || true
 
     # Diagnostic
     - google-chrome --version || true
@@ -115,7 +115,7 @@ katalon_digiboxvn_test:
       -reportFileName="Firefox_Report" \
       --config \
       -webui.autoUpdateDrivers=true \
-      -webui.firefox.args="--width=1920 --height=1080" \
+      -webui.firefox.args="-headless --width=1920 --height=1080" \
       || FIREFOX_EXIT=$?
 
       echo "Firefox Exit Code = $FIREFOX_EXIT"
@@ -148,7 +148,38 @@ katalon_digiboxvn_test:
       # Pipeline
       ##################################################
 
-      exit 0
+      PIPELINE_EXIT=0
+
+      if [ "$CHROME_EXIT" -ne 0 ]; then
+          PIPELINE_EXIT=1
+      fi
+
+      if [ "$FIREFOX_EXIT" -ne 0 ]; then
+          PIPELINE_EXIT=1
+      fi
+
+      echo "=============================="
+      echo "Chrome Exit  : $CHROME_EXIT"
+      echo "Firefox Exit : $FIREFOX_EXIT"
+      echo "=============================="
+
+      echo ""
+      echo "========== EXECUTION SUMMARY =========="
+
+      if [ "$CHROME_EXIT" -eq 0 ]; then
+          echo "Chrome  : PASSED"
+      else
+          echo "Chrome  : FAILED"
+      fi
+
+      if [ "$FIREFOX_EXIT" -eq 0 ]; then
+          echo "Firefox : PASSED"
+      else
+          echo "Firefox : FAILED"
+      fi
+
+      echo "======================================="
+      exit $PIPELINE_EXIT
 
     - find Reports -type f -name "*.mp4" -mtime +30 -exec rm -f {} \; || true
 
