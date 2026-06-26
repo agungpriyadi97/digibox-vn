@@ -17,12 +17,18 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-'Klik Button Create an account\r\n'
-WebUI.waitForElementVisible(findTestObject('WEB/Authentication/Registration/btn_createanaccount'), 5)
+//====================================================
+// CLICK CREATE AN ACCOUNT
+//====================================================
 
-'Klik Button Create an account\r\n'
-WebUI.scrollToElement(findTestObject('WEB/Authentication/Registration/btn_createanaccount'), 5)
+TestObject btnCreateAccount = findTestObject('WEB/Authentication/Registration/btn_createanaccount')
 
-'Klik Button Create an account\r\n'
-WebUI.click(findTestObject('WEB/Authentication/Registration/btn_createanaccount'))
+WebUI.waitForElementVisible(btnCreateAccount, 20)
 
+WebUI.scrollToElement(btnCreateAccount, 5)
+
+WebUI.waitForElementClickable(btnCreateAccount, 20)
+
+WebUI.mouseOver(btnCreateAccount)
+
+WebUI.click(btnCreateAccount)
