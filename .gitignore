@@ -22,3 +22,6 @@ build
 /.classpath
 .svn/
 .cache/
+
+# Katalon temporary files
+.temp*
