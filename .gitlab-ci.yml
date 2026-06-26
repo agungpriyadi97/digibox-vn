@@ -115,7 +115,7 @@ katalon_digiboxvn_test:
       -reportFileName="Firefox_Report" \
       --config \
       -webui.autoUpdateDrivers=true \
-      -webui.firefox.args="-headless --width=1920 --height=1080" \
+      -webui.firefox.args="--width=1920 --height=1080" \
       || FIREFOX_EXIT=$?
 
       echo "Firefox Exit Code = $FIREFOX_EXIT"
