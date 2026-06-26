@@ -3,7 +3,7 @@ image:
   entrypoint: [""]
 
 stages:
-  - test f
+  - test
 
 variables:
   # Ensures the job continues through all browser types even if one fails
