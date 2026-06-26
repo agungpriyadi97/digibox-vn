@@ -16,4 +16,4 @@ groovy.ui.GroovyMain
 --encoding
 UTF-8
 --indy
-"C:\\Users\\AgungPriyadi\\Katalon Studio\\digibox-vn\\Libs\\S0625_40.groovy"
+"C:\\Users\\AgungPriyadi\\Katalon Studio\\digibox-vn\\Libs\\S0626_10.groovy"

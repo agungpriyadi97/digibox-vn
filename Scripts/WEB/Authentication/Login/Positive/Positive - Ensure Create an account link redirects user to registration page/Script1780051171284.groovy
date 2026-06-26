@@ -18,5 +18,11 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 'Klik Button Create an account\r\n'
+WebUI.waitForElementVisible(findTestObject('WEB/Authentication/Registration/btn_createanaccount'), 5)
+
+'Klik Button Create an account\r\n'
+WebUI.scrollToElement(findTestObject('WEB/Authentication/Registration/btn_createanaccount'), 5)
+
+'Klik Button Create an account\r\n'
 WebUI.click(findTestObject('WEB/Authentication/Registration/btn_createanaccount'))
 

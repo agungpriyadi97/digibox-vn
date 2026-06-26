@@ -91,11 +91,11 @@ while (phone.length() < 10) {
 //------------------------------
 // Random Gmail
 //------------------------------
-
 String first = firstName.toLowerCase()
-String last  = lastName.toLowerCase()
 
-String email = "${first}.${last}.${ts}@gmail.com"
+String last = lastName.toLowerCase()
+
+String email = "$first.$last.$ts@gmail.com"
 
 //------------------------------
 // Random Address
@@ -103,23 +103,14 @@ String email = "${first}.${last}.${ts}@gmail.com"
 //====================================================
 // Random Address
 //====================================================
-
-String[] streets = [
-    "Nguyen Trai",
-    "Tran Hung Dao",
-    "Le Loi",
-    "Vo Nguyen Giap",
-    "Pham Van Dong",
-    "Hai Ba Trung",
-    "Nguyen Hue",
-    "Ly Thuong Kiet"
-]
+String[] streets = ['Nguyen Trai', 'Tran Hung Dao', 'Le Loi', 'Vo Nguyen Giap', 'Pham Van Dong', 'Hai Ba Trung', 'Nguyen Hue'
+    , 'Ly Thuong Kiet']
 
 int houseNumber = random.nextInt(999) + 1
 
 String street = streets[random.nextInt(streets.length)]
 
-String address = "${houseNumber} ${street}"
+String address = "$houseNumber $street"
 
 String zipCode = '100000'
 
@@ -166,11 +157,11 @@ WebUI.mouseOver(findTestObject('Cammon/Address Form/input_TnhThnh Ph_el-input__i
 
 WebUI.click(findTestObject('Cammon/Address Form/input_TnhThnh Ph_el-input__inner'))
 
-WebUI.waitForElementClickable(findTestObject('Cammon/Address Form/li_TP. H Ch Minh'), 10)
+WebUI.waitForElementClickable(findTestObject('Cammon/Address Form/li_TP. H Ch Minh'), 20)
 
 WebUI.mouseOver(findTestObject('Cammon/Address Form/li_TP. H Ch Minh'))
 
-WebUI.enhancedClick(findTestObject('Cammon/Address Form/li_TP. H Ch Minh'))
+WebUI.click(findTestObject('Cammon/Address Form/li_TP. H Ch Minh'))
 
 //====================================================
 // WARD
@@ -185,7 +176,7 @@ WebUI.waitForElementClickable(findTestObject('Cammon/Address Form/li_X Phc Ha'),
 
 WebUI.mouseOver(findTestObject('Cammon/Address Form/li_X Phc Ha'))
 
-WebUI.enhancedClick(findTestObject('Cammon/Address Form/li_X Phc Ha'))
+WebUI.click(findTestObject('Cammon/Address Form/li_X Phc Ha'))
 
 //====================================================
 // ZIP CODE
@@ -197,11 +188,13 @@ WebUI.setText(findTestObject('Cammon/Address Form/input_zip_code'), zipCode)
 //====================================================
 WebUI.scrollToElement(findTestObject('Cammon/Address Form/btn_save'), 5)
 
+WebUI.waitForElementVisible(findTestObject('Cammon/Address Form/btn_save'), 20)
+
 WebUI.waitForElementClickable(findTestObject('Cammon/Address Form/btn_save'), 20)
 
 WebUI.mouseOver(findTestObject('Cammon/Address Form/btn_save'))
 
-WebUI.enhancedClick(findTestObject('Cammon/Address Form/btn_save'))
+WebUI.click(findTestObject('Cammon/Address Form/btn_save'))
 
 println('CLICK SAVE')
 
