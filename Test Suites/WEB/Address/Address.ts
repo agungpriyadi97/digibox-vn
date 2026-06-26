@@ -12,17 +12,17 @@
    <rerunImmediately>true</rerunImmediately>
    <testSuiteGuid>b4ba61ea-3454-493c-b8db-3e8c10382084</testSuiteGuid>
    <testCaseLink>
-      <guid>8efee779-cd74-433d-a115-c6245f6d3036</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/Address Management/Address My Account/Shipping/Positive/Positive - Ensure user can edit shipping address successfully</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
       <guid>04113432-f5b7-4c5b-a772-3b35afd80b92</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Address Management/Address My Account/Shipping/Positive/Positive - Ensure user can add new shipping address successfully</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>8efee779-cd74-433d-a115-c6245f6d3036</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WEB/Address Management/Address My Account/Shipping/Positive/Positive - Ensure user can edit shipping address successfully</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>

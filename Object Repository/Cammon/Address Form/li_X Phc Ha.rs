@@ -6,11 +6,11 @@
    <elementGuidId>3a0ff108-9b38-446a-987e-2df0f31e6c80</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>(//ul[contains(@class, 'el-select-dropdown__list')]/li[@label='Xã Long Hòa'])[2]</value>
+         <key>CSS</key>
       </entry>
       <entry>
-         <key>CSS</key>
+         <key>XPATH</key>
+         <value>(//ul[contains(@class,'el-select-dropdown__list')]/li[@label='Xã Long Hòa'])[last()]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -28,7 +28,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>li</value>
-      <webElementGuid>ed6d9dc8-f65a-4fb0-a2b7-31f1f62ac066</webElementGuid>
+      <webElementGuid>0ed33b7a-80b6-477c-84cb-cf158fd52444</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -36,7 +36,7 @@
       <name>class</name>
       <type>Main</type>
       <value>el-select-dropdown__item hover</value>
-      <webElementGuid>99e71c86-d07d-46b8-b583-f7a62a17f3db</webElementGuid>
+      <webElementGuid>2dc2101d-3d62-4f6d-91c3-0d9f0a5e460c</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -44,7 +44,7 @@
       <name>value</name>
       <type>Main</type>
       <value>C260211090028784</value>
-      <webElementGuid>c2b969fc-e525-4568-8ce3-09ed73723a08</webElementGuid>
+      <webElementGuid>52fe4c54-5e5c-44b0-8223-6704a36021aa</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -52,7 +52,7 @@
       <name>label</name>
       <type>Main</type>
       <value>Xã Phước Hòa</value>
-      <webElementGuid>1deefd10-1c48-4f59-8934-c8410bb8c5fc</webElementGuid>
+      <webElementGuid>0717e0da-0cfe-413e-9c43-e03435a76b8b</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -60,7 +60,7 @@
       <name>text</name>
       <type>Main</type>
       <value>Xã Phước Hòa</value>
-      <webElementGuid>612495ba-6ce8-4039-bd79-dd0b63b0c98a</webElementGuid>
+      <webElementGuid>9b37bd63-4fe4-42c7-9237-a40f18d04868</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -68,7 +68,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>/html[1]/body[1]/div[@class=&quot;el-select-dropdown el-popper&quot;]/div[@class=&quot;el-scrollbar&quot;]/div[@class=&quot;el-select-dropdown__wrap el-scrollbar__wrap&quot;]/ul[@class=&quot;el-scrollbar__view el-select-dropdown__list&quot;]/li[@class=&quot;el-select-dropdown__item hover&quot;]</value>
-      <webElementGuid>e6581494-d946-4f2b-9154-29042447ced6</webElementGuid>
+      <webElementGuid>5e41944c-221a-4637-9447-5356dfd86f42</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -76,7 +76,7 @@
       <name>xpath:attributes</name>
       <type>Main</type>
       <value>(//li[@value='C260211090028784'])[2]</value>
-      <webElementGuid>47195967-36dc-41d2-8c87-fd6a3827ae3a</webElementGuid>
+      <webElementGuid>0b547d67-f2be-43ee-8c39-ae68c850a0d9</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -84,7 +84,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='testRegion'])[4]/following::li[1]</value>
-      <webElementGuid>2e0cf0a8-e56a-4731-9744-20084180afa9</webElementGuid>
+      <webElementGuid>34c9df1e-b432-4967-871f-f2368a04e708</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -92,7 +92,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Thành phố Đà Nẵng'])[4]/following::li[2]</value>
-      <webElementGuid>c3f0f967-ae60-405b-aba9-75cc1d967493</webElementGuid>
+      <webElementGuid>4474819d-1af3-41fe-8106-20fb6d4888bd</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -100,7 +100,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Xã Hòa Hội'])[2]/preceding::li[1]</value>
-      <webElementGuid>a4f14ef7-9519-45bd-a04e-48302ffdd2b1</webElementGuid>
+      <webElementGuid>b03016e0-f86e-4b41-9b55-c114dd229dcb</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -108,7 +108,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Xã Long Hòa'])[2]/preceding::li[2]</value>
-      <webElementGuid>d977cccc-10e9-4673-b20e-8ac5753ffe26</webElementGuid>
+      <webElementGuid>1b1bc1c3-d7f6-4c38-af53-1a4666d51bc9</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -116,7 +116,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//div[4]/div/div/ul/li</value>
-      <webElementGuid>8af5f054-e1ee-487f-836c-e6e51b5ccc9f</webElementGuid>
+      <webElementGuid>be6ffc03-5efa-4238-ae99-ad544b79cb7c</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -124,7 +124,7 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//li[(text() = 'Xã Phước Hòa' or . = 'Xã Phước Hòa')]</value>
-      <webElementGuid>512c27dd-f031-4150-b878-374777ced921</webElementGuid>
+      <webElementGuid>594d3a65-21c9-46d7-b462-c2761bdf5e90</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -132,7 +132,7 @@
       <name>xpath:attributes</name>
       <type>Main</type>
       <value>//li[@value='C260211090028784']</value>
-      <webElementGuid>3c7565b0-792a-4bc9-9fcf-af71331e2767</webElementGuid>
+      <webElementGuid>b5d43a71-3d0b-43ef-b9e7-a659236fc669</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -140,7 +140,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='`'])[1]/following::li[1]</value>
-      <webElementGuid>89ce2318-4c8d-46af-973d-9818e11cc68f</webElementGuid>
+      <webElementGuid>0e925b4c-249f-4111-bace-815db7180db0</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -148,7 +148,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Xã Hòa Hội'])[1]/preceding::li[1]</value>
-      <webElementGuid>659a9a6e-aa96-4a7f-b26c-e1314e82c7ea</webElementGuid>
+      <webElementGuid>e2c11cc9-2f89-412d-ad41-16217c0937bf</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -156,6 +156,6 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Xã Long Hòa'])[1]/preceding::li[2]</value>
-      <webElementGuid>64a0d088-03eb-4c06-924e-1c2d9cf55835</webElementGuid>
+      <webElementGuid>14f2c2b6-aecb-473b-824a-9b52104a9ca0</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>
