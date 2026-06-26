@@ -22,7 +22,7 @@ WebUI.callTestCase(findTestCase('WEB/Authentication/Login/Positive/Positive - En
 
 WebUI.navigateToUrl('https://d-speedshop-digibox-vn.gtechdigital.id/pdp/iphone-12/SP220318148023')
 
-WebUI.waitForPageLoad(10)
+WebUI.waitForPageLoad(60)
 
 // ========================= ADD TO CART =========================
 WebUI.scrollToElement(findTestObject('WEB/Product/PDP/btn_add to cart'), 5)
