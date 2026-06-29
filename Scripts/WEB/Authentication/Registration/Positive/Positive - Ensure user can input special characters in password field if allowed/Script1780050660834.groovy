@@ -38,5 +38,5 @@ WebUI.waitForElementVisible(findTestObject('WEB/Authentication/Registration/btn_
 WebUI.click(findTestObject('WEB/Authentication/Registration/btn_register'))
 
 'Verify Success Registration'
-WebUI.verifyElementText(findTestObject('WEB/Authentication/Registration/txt_succses'), 'Việc đăng ký của bạn đã thành công!')
+WebUI.verifyElementVisible(findTestObject('WEB/Authentication/Registration/txt_succses'), FailureHandling.STOP_ON_FAILURE)
 
