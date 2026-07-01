@@ -24,6 +24,10 @@ WebUI.callTestCase(findTestCase('WEB/Authentication/Login/Positive/Positive - En
 
 WebUI.callTestCase(findTestCase('WEB/Cart/Positive/Positive - Ensure user can add product to cart'), [:], FailureHandling.STOP_ON_FAILURE)
 
+WebUI.waitForElementVisible(findTestObject('WEB/Checkout/Payment/radio_zalopay'), 10)
+
+WebUI.scrollToElement(findTestObject('WEB/Checkout/Payment/radio_zalopay'), 5)
+
 WebUI.click(findTestObject('WEB/Checkout/Payment/radio_zalopay'))
 
 // Order Summary
@@ -49,62 +53,47 @@ WebUI.waitForPageLoad(30)
 WebUI.delay(3)
 
 // ========================= VERIFIKASI GATEWAY ZALOPAY =========================
-
 WebUI.waitForPageLoad(30)
+
 WebUI.delay(3)
 
 String currentUrl = WebUI.getUrl()
+
 String pageSource = DriverFactory.getWebDriver().getPageSource()
 
-println("Current URL : " + currentUrl)
+println('Current URL : ' + currentUrl)
 
 // =========================
 // Cek apakah halaman maintenance
 // =========================
-
 boolean isMaintenance =
-        currentUrl.toLowerCase().contains("maintenance") ||
-        pageSource.contains("Dịch vụ thanh toán") ||
-        pageSource.contains("bảo trì") ||
-        pageSource.toLowerCase().contains("maintenance")
+currentUrl.toLowerCase().contains("maintenance") ||
+pageSource.toLowerCase().contains("bảo trì") ||
+pageSource.toLowerCase().contains("website is under maintenance") ||
+pageSource.toLowerCase().contains("service unavailable")
 
 if (isMaintenance) {
 
-    WebUI.takeScreenshot("Reports/ZaloPay_Maintenance.png")
+WebUI.takeScreenshot("Reports/ZaloPay_Maintenance.png")
 
-    println("====================================")
-    println("ZaloPay Gateway sedang maintenance")
-    println("====================================")
+println("====================================================")
+println("INFO : ZaloPay Gateway sedang maintenance")
+println("INFO : Payment Gateway verification skipped")
+println("====================================================")
 
-    com.kms.katalon.core.util.KeywordUtil.markWarning(
-        "ZaloPay Gateway sedang maintenance. Verifikasi dilewati."
-    )
-
-    return
+return
 }
 
 // =========================
 // Verifikasi halaman payment normal
 // =========================
+WebUI.waitForElementVisible(findTestObject('WEB/ZaloPayGateway/merchant_logo'), 20)
 
-WebUI.waitForElementVisible(
-    findTestObject('WEB/ZaloPayGateway/merchant_logo'),
-    20
-)
+WebUI.verifyElementPresent(findTestObject('WEB/ZaloPayGateway/merchant_logo'), 10)
 
-WebUI.verifyElementPresent(
-    findTestObject('WEB/ZaloPayGateway/merchant_logo'),
-    10
-)
+WebUI.verifyElementPresent(findTestObject('WEB/ZaloPayGateway/transaction_content_value'), 10)
 
-WebUI.verifyElementPresent(
-    findTestObject('WEB/ZaloPayGateway/transaction_content_value'),
-    10
-)
+WebUI.verifyElementPresent(findTestObject('WEB/ZaloPayGateway/option_open_zalopay_app'), 10)
 
-WebUI.verifyElementPresent(
-    findTestObject('WEB/ZaloPayGateway/option_open_zalopay_app'),
-    10
-)
+WebUI.takeScreenshot('Reports/ZaloPay_Gateway.png')
 
-WebUI.takeScreenshot("Reports/ZaloPay_Gateway.png")

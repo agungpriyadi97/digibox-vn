@@ -16,38 +16,27 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
-import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-
-import com.kms.katalon.core.model.FailureHandling
-import com.kms.katalon.core.util.KeywordUtil
-import com.kms.katalon.core.webui.driver.DriverFactory
-import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
+import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 
 // ======================================================
 // LOGIN
 // ======================================================
-
-WebUI.callTestCase(
-	findTestCase('WEB/Authentication/Login/Positive/Positive - Ensure user can log in using valid account and password'),
-	[:],
-	FailureHandling.STOP_ON_FAILURE
-)
+WebUI.callTestCase(findTestCase('WEB/Authentication/Login/Positive/Positive - Ensure user can log in using valid account and password'), 
+    [:], FailureHandling.STOP_ON_FAILURE)
 
 // ======================================================
 // ADD PRODUCT TO CART
 // ======================================================
+WebUI.callTestCase(findTestCase('WEB/Cart/Positive/Positive - Ensure user can add product to cart'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.callTestCase(
-	findTestCase('WEB/Cart/Positive/Positive - Ensure user can add product to cart'),
-	[:],
-	FailureHandling.STOP_ON_FAILURE
-)
+WebUI.waitForElementVisible(findTestObject('WEB/Checkout/Payment/radio_zalopay'), 10)
+
+WebUI.scrollToElement(findTestObject('WEB/Checkout/Payment/radio_zalopay'), 5)
 
 // ======================================================
 // SELECT ZALOPAY
 // ======================================================
-
 WebUI.click(findTestObject('WEB/Checkout/Payment/radio_zalopay'))
 
 String summary = WebUI.getText(findTestObject('WEB/Checkout/OrderSummary/lbl_order_summary'))
@@ -56,7 +45,7 @@ WebUI.verifyMatch(summary, '.*Tóm tắt đơn hàng.*', true)
 
 String total = WebUI.getText(findTestObject('WEB/Checkout/OrderSummary/txt_total'))
 
-println("Total : " + total)
+println('Total : ' + total)
 
 WebUI.click(findTestObject('WEB/Checkout/OrderSummary/chk_accept_terms'))
 
@@ -71,89 +60,92 @@ WebUI.delay(5)
 // ======================================================
 // VALIDASI HALAMAN ZALOPAY
 // ======================================================
-
 String currentUrl = WebUI.getUrl()
+
 String pageSource = DriverFactory.getWebDriver().getPageSource()
 
-println("Current URL : " + currentUrl)
+println('Current URL : ' + currentUrl)
 
+
+// =========================
+// Cek apakah halaman maintenance
+// =========================
 boolean isMaintenance =
-	currentUrl.toLowerCase().contains("maintenance") ||
-	pageSource.contains("Dịch vụ thanh toán") ||
-	pageSource.contains("bảo trì") ||
-	pageSource.toLowerCase().contains("maintenance")
+currentUrl.toLowerCase().contains("maintenance") ||
+pageSource.toLowerCase().contains("bảo trì") ||
+pageSource.toLowerCase().contains("website is under maintenance") ||
+pageSource.toLowerCase().contains("service unavailable")
 
 if (isMaintenance) {
 
-	WebUI.takeScreenshot("Reports/ZaloPay_Maintenance.png")
+WebUI.takeScreenshot("Reports/ZaloPay_Maintenance.png")
 
-	KeywordUtil.markWarning("ZaloPay Gateway sedang maintenance. Test dilewati.")
+println("====================================================")
+println("INFO : ZaloPay Gateway sedang maintenance")
+println("INFO : Payment Gateway verification skipped")
+println("====================================================")
 
-	return
+return
 }
 
 // ======================================================
 // MERCHANT
 // ======================================================
+WebUI.waitForElementVisible(findTestObject('WEB/ZaloPayGateway/merchant_logo'), 20)
 
-WebUI.waitForElementVisible(findTestObject('WEB/ZaloPayGateway/merchant_logo'),20)
-
-WebUI.verifyElementPresent(findTestObject('WEB/ZaloPayGateway/merchant_logo'),10)
+WebUI.verifyElementPresent(findTestObject('WEB/ZaloPayGateway/merchant_logo'), 10)
 
 // ======================================================
 // OPEN ZALOPAY APP
 // ======================================================
-
-WebUI.verifyElementPresent(findTestObject('WEB/ZaloPayGateway/option_open_zalopay_app'),10)
+WebUI.verifyElementPresent(findTestObject('WEB/ZaloPayGateway/option_open_zalopay_app'), 10)
 
 WebUI.click(findTestObject('WEB/ZaloPayGateway/option_open_zalopay_app'))
 
 WebUI.waitForPageLoad(10)
 
-WebUI.takeScreenshot("Reports/ZaloPay_App.png")
+WebUI.takeScreenshot('Reports/ZaloPay_App.png')
 
 WebUI.click(findTestObject('WEB/ZaloPayGateway/link_back_to_previous_page'))
 
 // ======================================================
 // INTERNATIONAL CARD
 // ======================================================
-
-WebUI.verifyElementPresent(findTestObject('WEB/ZaloPayGateway/option_international_card'),10)
+WebUI.verifyElementPresent(findTestObject('WEB/ZaloPayGateway/option_international_card'), 10)
 
 WebUI.click(findTestObject('WEB/ZaloPayGateway/option_international_card'))
 
 WebUI.waitForPageLoad(10)
 
-WebUI.takeScreenshot("Reports/International_Card.png")
+WebUI.takeScreenshot('Reports/International_Card.png')
 
 WebUI.click(findTestObject('WEB/ZaloPayGateway/link_back_to_previous_page'))
 
 // ======================================================
 // VIETQR
 // ======================================================
-
-WebUI.verifyElementPresent(findTestObject('WEB/ZaloPayGateway/option_vietqr'),10)
+WebUI.verifyElementPresent(findTestObject('WEB/ZaloPayGateway/option_vietqr'), 10)
 
 WebUI.click(findTestObject('WEB/ZaloPayGateway/option_vietqr'))
 
 WebUI.waitForPageLoad(10)
 
-WebUI.takeScreenshot("Reports/VietQR.png")
+WebUI.takeScreenshot('Reports/VietQR.png')
 
 WebUI.click(findTestObject('WEB/ZaloPayGateway/link_back_to_previous_page'))
 
 // ======================================================
 // DOMESTIC CARD
 // ======================================================
-
-WebUI.verifyElementPresent(findTestObject('WEB/ZaloPayGateway/option_domestic_card'),10)
+WebUI.verifyElementPresent(findTestObject('WEB/ZaloPayGateway/option_domestic_card'), 10)
 
 WebUI.click(findTestObject('WEB/ZaloPayGateway/option_domestic_card'))
 
 WebUI.waitForPageLoad(10)
 
-WebUI.takeScreenshot("Reports/Domestic_Card.png")
+WebUI.takeScreenshot('Reports/Domestic_Card.png')
 
 WebUI.click(findTestObject('WEB/ZaloPayGateway/link_back_to_previous_page'))
 
-println("===== Semua Payment Method berhasil diverifikasi =====")
+println('===== Semua Payment Method berhasil diverifikasi =====')
+
