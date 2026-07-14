@@ -45,47 +45,48 @@ WebUI.verifyMatch(summary, '.*Tóm tắt đơn hàng.*', true)
 
 String total = WebUI.getText(findTestObject('WEB/Checkout/OrderSummary/txt_total'))
 
-println('Total : ' + total)
+println('Total: ' + total)
 
+// Centang checkbox setujui syarat & ketentuan
 WebUI.click(findTestObject('WEB/Checkout/OrderSummary/chk_accept_terms'))
 
-WebUI.delay(3)
+WebUI.delay(10)
 
 WebUI.click(findTestObject('WEB/Checkout/OrderSummary/button_thanh_thon_2'))
 
 WebUI.waitForPageLoad(30)
 
-WebUI.delay(5)
+WebUI.delay(3)
 
-// ======================================================
-// VALIDASI HALAMAN ZALOPAY
-// ======================================================
+// ========================= VERIFIKASI GATEWAY ZALOPAY =========================
+WebUI.waitForPageLoad(30)
+
+WebUI.delay(3)
+
 String currentUrl = WebUI.getUrl()
 
 String pageSource = DriverFactory.getWebDriver().getPageSource()
 
 println('Current URL : ' + currentUrl)
 
-
 // =========================
 // Cek apakah halaman maintenance
 // =========================
-boolean isMaintenance =
-currentUrl.toLowerCase().contains("maintenance") ||
-pageSource.toLowerCase().contains("bảo trì") ||
-pageSource.toLowerCase().contains("website is under maintenance") ||
-pageSource.toLowerCase().contains("service unavailable")
+boolean isMaintenance = ((currentUrl.toLowerCase().contains('maintenance') || pageSource.toLowerCase().contains('bảo trì')) || 
+pageSource.toLowerCase().contains('website is under maintenance')) || pageSource.toLowerCase().contains('service unavailable')
 
 if (isMaintenance) {
+    WebUI.takeScreenshot('Reports/ZaloPay_Maintenance.png')
 
-WebUI.takeScreenshot("Reports/ZaloPay_Maintenance.png")
+    println('====================================================')
 
-println("====================================================")
-println("INFO : ZaloPay Gateway sedang maintenance")
-println("INFO : Payment Gateway verification skipped")
-println("====================================================")
+    println('INFO : ZaloPay Gateway sedang maintenance')
 
-return
+    println('INFO : Payment Gateway verification skipped')
+
+    println('====================================================')
+
+    return null
 }
 
 // ======================================================

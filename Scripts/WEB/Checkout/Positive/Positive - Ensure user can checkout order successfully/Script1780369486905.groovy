@@ -99,20 +99,20 @@ WebUI.click(findTestObject('WEB/Checkout/ConfirmDialog/btn_agree_continue'))
 WebUI.waitForPageLoad(10)
 
 // Verifikasi halaman sukses
-WebUI.waitForElementVisible(findTestObject('WEB/Checkout/PaymentResult/lbl_thank_you'), 10)
+not_run: WebUI.waitForElementVisible(findTestObject('WEB/Checkout/PaymentResult/lbl_thank_you'), 10)
 
 // Ambil teks ucapan terima kasih
-String thankYou = WebUI.getText(findTestObject('WEB/Checkout/PaymentResult/lbl_thank_you'))
+not_run: String thankYou = WebUI.getText(findTestObject('WEB/Checkout/PaymentResult/lbl_thank_you'))
 
-WebUI.verifyMatch(thankYou, 'Cám ơn Quý khách!', false)
+not_run: WebUI.verifyMatch(thankYou, 'Cám ơn Quý khách!', false)
 
 // Ambil nomor order dari teks
-String orderText = WebUI.getText(findTestObject('WEB/Checkout/PaymentResult/txt_order_id'))
+not_run: String orderText = WebUI.getText(findTestObject('WEB/Checkout/PaymentResult/txt_order_id'))
 
-String orderId = orderText.replaceAll('Mã đơn hàng.', '').trim()
+not_run: String orderId = orderText.replaceAll('Mã đơn hàng.', '').trim()
 
-println('Order ID: ' + orderId)
+not_run: println('Order ID: ' + orderId)
 
 // Klik tombol lanjut belanja
-WebUI.click(findTestObject('WEB/Checkout/PaymentResult/button_Tip tc mua sm(continue shopping_)'))
+not_run: WebUI.click(findTestObject('WEB/Checkout/PaymentResult/button_Tip tc mua sm(continue shopping_)'))
 

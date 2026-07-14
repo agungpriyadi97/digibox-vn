@@ -66,22 +66,21 @@ println('Current URL : ' + currentUrl)
 // =========================
 // Cek apakah halaman maintenance
 // =========================
-boolean isMaintenance =
-currentUrl.toLowerCase().contains("maintenance") ||
-pageSource.toLowerCase().contains("bảo trì") ||
-pageSource.toLowerCase().contains("website is under maintenance") ||
-pageSource.toLowerCase().contains("service unavailable")
+boolean isMaintenance = ((currentUrl.toLowerCase().contains('maintenance') || pageSource.toLowerCase().contains('bảo trì')) || 
+pageSource.toLowerCase().contains('website is under maintenance')) || pageSource.toLowerCase().contains('service unavailable')
 
 if (isMaintenance) {
+    WebUI.takeScreenshot('Reports/ZaloPay_Maintenance.png')
 
-WebUI.takeScreenshot("Reports/ZaloPay_Maintenance.png")
+    println('====================================================')
 
-println("====================================================")
-println("INFO : ZaloPay Gateway sedang maintenance")
-println("INFO : Payment Gateway verification skipped")
-println("====================================================")
+    println('INFO : ZaloPay Gateway sedang maintenance')
 
-return
+    println('INFO : Payment Gateway verification skipped')
+
+    println('====================================================')
+
+    return null
 }
 
 // =========================
