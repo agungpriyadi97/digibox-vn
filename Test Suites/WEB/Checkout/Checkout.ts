@@ -26,13 +26,6 @@
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>dc924cfc-df9f-4311-bab2-da0d2f09730e</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/Checkout/Positive/Positive - Ensure delivery address on created order matches selected checkout address</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
       <guid>588e1b76-8cdc-4c1b-a3a3-6ba872342946</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
@@ -40,17 +33,24 @@
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>ccc60cea-529b-482f-8ce5-17353a9eefce</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/Checkout/Positive/Positive - Ensure user can checkout order successfully</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
       <guid>1d52b6aa-d7dd-48f1-8a26-2ee9b182aef2</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Checkout/Positive/Positive - Ensure Postal Code dropdown displays data based on selected District in Shipping Address (Edit)</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>4d98b5fa-7e23-452d-b1fb-a2f879ba16ac</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WEB/Checkout/Positive/Positive - Ensure Postal Code dropdown displays data based on selected District in Billing Address (Add New)</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>dc924cfc-df9f-4311-bab2-da0d2f09730e</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WEB/Checkout/Positive/Positive - Ensure delivery address on created order matches selected checkout address</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
@@ -68,10 +68,10 @@
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>4d98b5fa-7e23-452d-b1fb-a2f879ba16ac</guid>
+      <guid>ccc60cea-529b-482f-8ce5-17353a9eefce</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/Checkout/Positive/Positive - Ensure Postal Code dropdown displays data based on selected District in Billing Address (Add New)</testCaseId>
+      <testCaseId>Test Cases/WEB/Checkout/Positive/Positive - Ensure user can checkout order successfully</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
 </TestSuiteEntity>
