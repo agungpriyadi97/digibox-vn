@@ -12,574 +12,574 @@
    <rerunImmediately>true</rerunImmediately>
    <testSuiteGuid>843687fa-a663-440e-a2c7-0b83faa47086</testSuiteGuid>
    <testCaseLink>
-      <guid>6cc57d68-5fc4-4b06-9089-88b413ec99e0</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/Address Management/Address My Account/Shipping/Positive/Positive - Ensure user can add new shipping address successfully</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>769de806-1ea5-4f68-9e4d-cdbfbb4f401c</guid>
+      <guid>d05d7aa2-d59e-4095-a9bc-f2688c2efb29</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Address Management/Address My Account/Billing/Positive/Positive - Ensure user can add new billing address successfully</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>f3b7fdb7-de32-4894-a82c-fd7e5baaa3d8</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/Address Management/Address My Account/Shipping/Positive/Positive - Ensure user can delete shipping address successfully</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>3af9c297-b430-45fa-91c0-25a521652d4b</guid>
+      <guid>a7f6d1c7-88d2-472f-9819-6b8021c88684</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Address Management/Address My Account/Billing/Positive/Positive - Ensure user can delete billing address successfully</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>a9b049c7-8f51-4611-9323-a8e6cdaa3258</guid>
+      <guid>cd35efa8-1f1c-4854-949e-b464018f7865</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WEB/Address Management/Address My Account/Shipping/Positive/Positive - Ensure user can add new shipping address successfully</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>ed39d7b8-c8d0-46cc-923a-3f95d0ce8368</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WEB/Address Management/Address My Account/Shipping/Positive/Positive - Ensure user can delete shipping address successfully</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>695ea2e9-7c92-4da1-9f20-895b7b3fb2f1</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Address Management/Address My Account/Shipping/Positive/Positive - Ensure user can edit shipping address successfully</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>fc47bf18-3d81-439c-b405-eb1ca9168cc2</guid>
+      <guid>55a3f2a0-1932-42d3-ac8c-3de78b1936e4</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Forgot Password/Negative/Negative - Ensure change password button cannot be used when mandatory fields are empty</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>2adf3c8f-9895-4c40-b766-83bf593145dc</guid>
+      <guid>9db5ff32-9e97-4066-b019-b7923036fe2a</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Forgot Password/Negative/Negative - Ensure forgot password fails using incorrect verification code</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>e23a237f-d9d1-4378-abce-b3edc1b106b9</guid>
+      <guid>0ec06d21-5933-4ba5-87cf-c4d95dc277e5</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Forgot Password/Negative/Negative - Ensure forgot password fails using unregistered account or email</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>1493878d-1f84-4d09-894a-a8150a3bf78a</guid>
+      <guid>9f053549-8f5f-4979-8364-91b93005e788</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Forgot Password/Positive/Positive - Ensure user can change password successfully using valid verification code</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>f5db3f19-6260-474f-9536-505ec85c2394</guid>
+      <guid>f10a6f45-a6fe-47b1-9432-40c0654ccfdf</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Forgot Password/Positive/Positive - Ensure user can log in using new changed password</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>ec44f6fe-c26f-4cf8-b12c-af4a9c670f79</guid>
+      <guid>ea5e0916-3948-40b9-9eb6-5589b52617ae</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Forgot Password/Positive/Positive - Ensure verification code is sent successfully to registered email</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>89cea05d-bd09-42cf-873f-01d38a3a661b</guid>
+      <guid>4895c647-f5ce-45f8-9707-7cd6db5584b2</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Login/Negative/Negative - Ensure login fails using incorrect account or email</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>132c88d0-b697-41df-bc61-93ee483f86c1</guid>
+      <guid>b0c604fd-f6da-452a-b1f9-a796764c561c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Login/Negative/Negative - Ensure login fails using incorrect password</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>cf0e59c0-28c1-47f6-a778-cdd4d2995a75</guid>
+      <guid>53d1ab35-cf04-42f5-84b7-c9e83dc06213</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Login/Negative/Negative - Ensure login fails using unregistered account or email</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>a2f37cb0-4733-4c62-8623-c93534dbdc28</guid>
+      <guid>0cd8ff4d-a08b-4b5a-aac1-2585c1721d3f</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Login/Negative/Negative - Ensure login fails using valid account with empty password</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>77e17177-73fa-4490-801a-68bb5bb80050</guid>
+      <guid>e5fa9c8b-6d73-43a4-85ed-af364681f073</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Login/Negative/Negative - Ensure login fails using valid password with empty account</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>8e255b22-09f7-486a-9004-37e34527d8c5</guid>
+      <guid>094a691d-b1be-453a-9084-8e8181fb73d9</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Login/Negative/Negative - Ensure login fails when account field is empty</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>83aa6123-c83e-408e-94fd-a90752b7a61b</guid>
+      <guid>29eb6997-2498-4d72-a53c-02f8180c8b42</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Login/Negative/Negative - Ensure login fails when password does not contain letters, numbers, and special characters</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>e1307bd3-ad3a-408b-97fd-70304d27ee72</guid>
+      <guid>94c8afa0-7c68-410d-92cb-177970e348ad</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Login/Negative/Negative - Ensure login fails when password field is empty</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>d026c89c-661b-4817-b7e2-e38100d691a1</guid>
+      <guid>4127820f-ed51-491e-b02c-42af45c17943</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Login/Negative/Negative - Ensure mandatory validation message appears when account field is empty</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>cdd9103d-4e6f-4fc8-8b83-559adfd79a04</guid>
+      <guid>cf515fa2-4396-4746-b722-32cd04c3723b</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Login/Negative/Negative - Ensure password validation message appears when password does not meet requirements</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>5a040cbc-3050-4bed-a288-b2ff9a9750c2</guid>
+      <guid>45fe8f90-59d9-4dd6-b55c-a9e2d58ff13f</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Login/Positive/Positive - Ensure Create an account link redirects user to registration page</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>c71ccb2f-1202-4207-ac7c-88639b2ec28a</guid>
+      <guid>9026966a-8e1e-4859-ba21-2b6322b031e1</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Login/Positive/Positive - Ensure Forgot your password link redirects user to reset password page</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>2f25b4c5-8948-407a-8c75-bffb33cfe8cc</guid>
+      <guid>d8eee88a-a23f-456d-ad4c-882f204b8a50</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Login/Positive/Positive - Ensure password characters are masked during input</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>7d641576-c39f-4e11-a7b4-27d471051724</guid>
+      <guid>54fcf28e-d658-4bb0-b05b-c202cfd17a65</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Login/Positive/Positive - Ensure user can log in using valid account and password</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>bfcb2b28-c2d7-48ab-ab4c-01f7be5cefbb</guid>
+      <guid>8705af59-f16c-412b-864d-0d03037793a5</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Registration/Negative/Negative - Ensure account field does not accept only spaces</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>6eb80a7b-4b6f-4bef-89e1-705a7a4149ae</guid>
+      <guid>74380c15-8216-4215-869c-4c84e602a1cb</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Registration/Negative/Negative - Ensure error message appears when account field is empty</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>1683a20a-42be-4960-9c32-15bdfaaab883</guid>
+      <guid>d7e17b3f-7b43-417e-ae94-ae2d87e50357</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Registration/Negative/Negative - Ensure error message appears when email field is empty</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>95ab4e30-8869-4da6-a9bf-bb56af8a9fab</guid>
+      <guid>862d1d6d-c870-4801-bd18-a82d64ddc3fa</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Registration/Negative/Negative - Ensure error message appears when password field is empty</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>e42a612e-f3e6-4aa2-a1ed-5b084ab7f3a4</guid>
+      <guid>b62d62bf-c7a8-40bc-a306-8307f06bd3cc</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Registration/Negative/Negative - Ensure password field enforces minimum character requirement</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>bd6dd029-d990-4d3d-af43-43dafc603fa5</guid>
+      <guid>0f37d7c6-ecc8-4323-85f8-ca64378a2c8d</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Registration/Negative/Negative - Ensure registration with duplicate email or account is rejected</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>8f77fd66-6600-44be-b740-1f2e107fff0a</guid>
+      <guid>666fc5af-e668-4b2e-8708-a43df91041c6</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Registration/Negative/Negative - Ensure system validates invalid email format</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>2735315b-af71-4b8e-b86b-be415b4f53df</guid>
+      <guid>ab4530fd-cc3e-49da-a7c4-661d67f2bf69</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Registration/Negative/Negative - Ensure user cannot register using invalid email format</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>b8f66b6e-6a25-4cfd-8cd8-3f6916145586</guid>
+      <guid>3ab12067-4bd0-4103-a2ca-b6f83b05f048</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Registration/Negative/Negative - Ensure validation message Obligatory appears for empty account field</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>224aff1e-1d9f-4949-a15e-dbbfeccf46cb</guid>
+      <guid>01f21393-690e-498c-bccc-35e7a2e5e7dc</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Registration/Negative/Negative - Ensure validation message Obligatory appears for empty password field</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>8380f935-c9d3-45d1-b0af-1cc1acfc99a9</guid>
+      <guid>8155f58f-3f6c-4648-bcf5-d054505ebe08</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Registration/Negative/Negative - Ensure validation message Please enter a valid email address appears for invalid email</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>f7082a29-4cc2-4e4c-a921-0ec76a62e590</guid>
+      <guid>b1808301-e2d9-416d-91b2-b1582b0ce2cb</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Registration/Positive/Positive - Ensure password field masks entered characters</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>281cfc54-0b76-4c73-ab5a-01de7840b0b8</guid>
+      <guid>d2fb8499-065d-4eff-af4d-018f3a237871</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Registration/Positive/Positive - Ensure register button redirects user after successful registration</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>ebaa245b-5655-42d1-9af7-eddabe4fd6dd</guid>
+      <guid>88a96224-97fc-4765-8731-b0c87653ce91</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Registration/Positive/Positive - Ensure user can input special characters in password field if allowed</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>d757af7e-1f61-4bef-bcf5-06bfb4e0dbea</guid>
+      <guid>7cd9269b-2891-4423-996d-8e0b2e270530</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Registration/Positive/Positive - Ensure user can register successfully with valid email, account, and password</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>49ee831d-f44a-4c81-a004-e6b2d1234d57</guid>
+      <guid>5cbe8b16-1d88-4147-870f-0ff57014d43b</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Authentication/Registration/Positive/Positive - Ensure validation messages disappear after valid input is entered</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>14549a04-1f79-4bff-b6c2-d019dc69ecc6</guid>
+      <guid>4c9ff437-e44b-405d-ae15-51e29725933a</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Cart/Positive/Positive - Ensure total cart quantity on header icon is displayed correctly</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>b21064ef-733e-4df4-b08a-2e83af18204c</guid>
+      <guid>c262b338-5204-4f26-8f83-c404d405d68c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Cart/Positive/Positive - Ensure user can add product to cart</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>60c57383-20f7-4f13-8776-61014e798354</guid>
+      <guid>d9f3d828-bd34-4ba7-be4a-ceb02c91b3f5</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Cart/Positive/Positive - Ensure user can remove product from shopping cart</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>362d1d8a-8a11-4253-bb60-44684b9fcdec</guid>
+      <guid>16fffc40-ba84-4599-8f06-a1466f73dc15</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Cart/Positive/Positive - Ensure user can update product quantity in shopping cart</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>4777265d-5674-4a90-b8d4-885693af14f4</guid>
+      <guid>e30c34db-f096-4a74-a408-0d557b091824</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Checkout/Positive/Positive - Ensure checkout process can be completed without payment</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>144f7c56-ccfe-40fa-a7d7-f93055ccdf54</guid>
+      <guid>620b71ae-7dbf-4f3c-a29e-a6cec2dd38ea</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Checkout/Positive/Positive - Ensure correct insurance fee calculation for promotion products</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>8ad67bf7-88f9-440d-80b6-1f76bd658f1e</guid>
+      <guid>48c5a9bb-d79c-4ab8-bd15-18c64c5c32ca</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Checkout/Positive/Positive - Ensure delivery address on created order matches selected checkout address</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>95bc7a48-9178-47e5-847e-1d648a77da3f</guid>
+      <guid>1ac7ab64-0718-4c6f-9e5e-6e1ed011a45b</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Checkout/Positive/Positive - Ensure insurance fee is displayed per item in checkout</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>4b315b94-51e2-45f9-a77b-b03bb0b9f968</guid>
+      <guid>bfe0979c-b0a2-4249-a614-e0cda33d69d0</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Checkout/Positive/Positive - Ensure Postal Code dropdown displays data based on selected District in Billing Address (Add New)</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>9d8cd019-b277-4c1b-bd44-6a24ae9dd7c2</guid>
+      <guid>2560822f-bfa3-42b6-9eb7-6a6425d9b860</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Checkout/Positive/Positive - Ensure Postal Code dropdown displays data based on selected District in Billing Address (Edit)</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>b2e5d237-5247-4e10-8d1a-f0f72c01dac3</guid>
+      <guid>fddfa8b5-793c-42ff-adf2-a65f40da68d5</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Checkout/Positive/Positive - Ensure Postal Code dropdown displays data based on selected District in Shipping Address (Add New)</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>59799529-5293-4f38-851f-72add14a6a86</guid>
+      <guid>0e2d620c-a549-4518-bd33-b64fb6262d6d</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Checkout/Positive/Positive - Ensure Postal Code dropdown displays data based on selected District in Shipping Address (Edit)</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>68f5f031-92fe-466e-9983-4d65ff7ca52f</guid>
+      <guid>89cbfa75-ad34-4663-a534-fd10c021c71e</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Checkout/Positive/Positive - Ensure user can checkout order successfully</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>a2755928-ae06-44af-b9af-b48cd74fc4b8</guid>
+      <guid>9792770f-6a3d-4201-b6c9-bcfa01d90adf</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Email Verification/Positive/Positive - Ensure forgot password verification email is received</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>b236ce50-bc32-4ef9-b953-1a8220d8456d</guid>
+      <guid>db1df71c-885a-4fe2-91c9-1aa228595ed7</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/External Integration/Positive/Positive - Ensure user can open Zalo chat from product page</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>dab7edec-7946-499f-9824-c853680297b9</guid>
+      <guid>12ed5fc4-92b4-4d02-9354-0a93e5277813</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/External Integration/Positive/Positive - Ensure ZaloPay interface displays all available payment methods</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>b97d2cf2-a9c8-4af7-bb68-5f220241141f</guid>
+      <guid>4fc65ba9-225d-40b6-b69a-0c278dc641a1</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/External Integration/Positive/Positive - Ensure ZaloPay payment option is displayed</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>12f3aa15-3ad3-448d-8579-4ebcd112c8ef</guid>
+      <guid>3a9cbf85-9084-4350-b0e5-5d02a2de1eed</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/External Integration/Positive/Positive - Verify user can click Zalo chat button and open Zalo link in new tab</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>c7841b4b-67f0-4533-9742-e4347887802c</guid>
+      <guid>5ae60e95-20a7-402d-9800-c1cd6c58e4b8</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Guest/Negative/Negative - Ensure guest user cannot access profile page</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>749111a9-89fc-4871-89cc-764d0ccf0fb9</guid>
+      <guid>ae05fb23-2656-4258-a4c2-09fb7d9f86ec</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Guest/Negative/Negative - Ensure guest user input email invalid</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>78aec276-e626-4638-957c-47bca63ded1a</guid>
+      <guid>5253abd0-dd69-4462-96db-fad2e9cc2af8</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Guest/Negative/Negative - Ensure guest user receives error message when entering an invalid verification code on order tracking page</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>c35326ca-6d44-42d2-9daa-133c87af7591</guid>
+      <guid>584f9b60-5c33-4552-ad32-3e3a42a68e69</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Guest/Positive/Positive - Ensure guest user can checkout order successfully</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>dc79d6c8-5fc1-44fb-88a8-c8ba32506441</guid>
+      <guid>3828f6ff-43ff-41b7-881a-312a7b226b39</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Guest/Positive/Positive - Ensure user can explore the website as a guest</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>be7a3aae-64bf-47be-bedb-4113381d7efd</guid>
+      <guid>981680a9-1351-4d0a-993f-1c8f2ecff34c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Guest/Positive/Positive - Make sure guest users can add company addresses</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>ee4b47b5-9bd9-4d05-b7a1-d6fadd93acbb</guid>
+      <guid>528b190e-a317-4ce5-b79d-e9e17894d51e</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Home/Positive/Positive - Ensure Order Tracking menu is displayed</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>961f2429-d591-4b54-be42-e839d220bb32</guid>
+      <guid>e32c1da9-fe41-49c8-876b-31658de1927f</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Home/Positive/Positive - Ensure Order Tracking page is accessible</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>2e89d079-d8e2-4fc7-bff1-187343894b79</guid>
+      <guid>061a86e9-7ef1-4b70-862b-afe1e5f69879</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Home/Positive/Positive - Ensure search menu is displayed and functional</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>1e3e0624-f1e7-4190-b936-59167787dd06</guid>
+      <guid>835eed6a-4545-49ac-beeb-8c575ecf4b66</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Product/Category/Positive/Positive - Ensure Accessories menu is displayed</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>2d558784-85f9-4e95-af96-54142f3db7a3</guid>
+      <guid>6b763011-d7e1-42dc-8f79-0acc5893f03a</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Product/Category/Positive/Positive - Ensure Audio menu is displayed</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>4e1ba5f4-bb4f-44f3-b2c7-1169e9f789cf</guid>
+      <guid>6ba87abb-8366-4dd0-9115-cce51556495f</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Product/Category/Positive/Positive - Ensure Installment Plans menu is displayed</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>25bb8dba-a079-463a-a117-1ddd99d00dc3</guid>
+      <guid>edf2cb3e-1057-4475-b8bc-39ac718777d4</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Product/Category/Positive/Positive - Ensure Ipad menu is displayed</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>58ca0740-bd3f-4267-b5be-661b437307c1</guid>
+      <guid>c19bfb7b-f523-438c-adfa-b35a532e9c99</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Product/Category/Positive/Positive - Ensure Learn more menu is displayed</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>f8878265-c5ee-472a-bf9d-133391c42a57</guid>
+      <guid>58e3b6ff-af00-4842-b083-3f5f08f8b480</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Product/Category/Positive/Positive - Ensure Mac menu is displayed</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>fa840124-9f4f-4198-9e37-b5ad4ab29777</guid>
+      <guid>1cec76e1-0f0b-49e2-a472-a4571798340e</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Product/Category/Positive/Positive - Ensure Mobile Phones menu is displayed</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>96c48b02-a355-40f5-a987-1d87cbff6226</guid>
+      <guid>42c7e043-4db0-43d5-91e0-f81f7def178f</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Product/Category/Positive/Positive - Ensure Promo menu is displayed</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>6808a855-4a59-41b5-999f-ec3a8286e62d</guid>
+      <guid>8686eea0-be7d-450e-8ea3-eeef04647402</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Product/Category/Positive/Positive - Ensure TV menu is displayed</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>110e11f5-4e92-496c-aa6d-2ba747e16add</guid>
+      <guid>aefdfaf7-ef86-4ed4-9c05-3c12f6fb19e0</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Product/Category/Positive/Positive - Ensure Watch menu is displayed</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>3da0fd59-2b6e-4af5-8203-d910ff42f3ea</guid>
+      <guid>b83006f2-735d-4abf-aefc-ae98627461af</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Product/PDP/Positive/Positive - Ensure product details are displayed correctly</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>2b1ecded-cc39-4650-8b51-d9fd4c333ba4</guid>
+      <guid>0e15a2fe-824f-40e5-9f70-1a40219f87c1</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Product/PDP/Positive/Positive - Ensure product price is displayed correctly</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>5dfaddb2-2b5f-415f-ac1e-a1191d36ad5c</guid>
+      <guid>35e4ef8b-7a89-4f1d-ad7b-229bf691cd45</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Product/PDP/Positive/Positive - Ensure product stock information is displayed correctly</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>e9afff83-5a51-4f96-a14b-7ef5978f4439</guid>
+      <guid>9a515769-81c4-4f69-acc4-8687ee568928</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/Product/PDP/Positive/Positive - Ensure user can access Product Detail Page (PDP)</testCaseId>
