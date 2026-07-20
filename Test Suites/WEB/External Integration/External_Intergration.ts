@@ -21,14 +21,14 @@
    <testCaseLink>
       <guid>bb237eca-6b9b-45ff-9359-2ae177a46552</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/External Integration/Positive/Positive - Ensure user can open Zalo chat from product page</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
       <guid>5e3b5b7c-d0f7-41f9-beeb-ea6bd49c05b2</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/WEB/External Integration/Positive/Positive - Verify user can click Zalo chat button and open Zalo link in new tab</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>

@@ -1,4 +1,5 @@
 import java.io.File
+import java.util.Arrays
 import com.kms.katalon.core.annotation.BeforeTestCase
 import com.kms.katalon.core.annotation.AfterTestCase
 import com.kms.katalon.core.context.TestCaseContext
@@ -123,22 +124,39 @@ class AutomationListener {
 
             if (DriverFactory.getWebDriver() != null) {
 
-                String tcName = testCaseContext.getTestCaseId()
-                        .replaceAll("[^a-zA-Z0-9]", "_")
+                // ============================================
+                // Parsing Test Case ID untuk Subfolder Modul
+                // ============================================
+                String rawId = testCaseContext.getTestCaseId()
+                String cleanPath = rawId.replace("Test Cases/", "") 
+                String[] parts = cleanPath.split("/")
+                
+                String modulePath = "Root"
+                String tcName = cleanPath
+                
+                // Jika test case berada di dalam struktur folder
+                if (parts.length > 1) {
+                    // Menggabungkan array folder menggunakan "/" agar menjadi path direktori
+                    modulePath = String.join("/", Arrays.copyOfRange(parts, 0, parts.length - 1))
+                    // Nama test case diambil dari elemen paling belakang
+                    tcName = parts[parts.length - 1]
+                }
 
+                // Hanya membersihkan karakter nama test case-nya saja
+                tcName = tcName.replaceAll("[^a-zA-Z0-9_\\-]", "_")
                 String status = testCaseContext.getTestCaseStatus()
 
                 // ============================================
-                // Screenshot GitLab Artifact
+                // Screenshot GitLab Artifact (Masuk ke Subfolder)
                 // ============================================
 
-                String screenshotFolder =
-                        RunConfiguration.getProjectDir() + "/Screenshot"
+                // Membuat path folder utama + path modul
+                String screenshotFolder = RunConfiguration.getProjectDir() + "/Screenshot/" + modulePath
+                
+                // Buat direktori subfoldernya jika belum ada
+                new File(screenshotFolder).mkdirs() 
 
-                new File(screenshotFolder).mkdirs()
-
-                String artifactScreenshot =
-                        screenshotFolder + "/" + tcName + "_" + status + ".png"
+                String artifactScreenshot = screenshotFolder + "/" + tcName + "_" + status + ".png"
 
                 try {
                     WebUI.takeScreenshot(artifactScreenshot)
@@ -154,8 +172,11 @@ class AutomationListener {
 
                 if (reportFolder != null) {
 
-                    String reportScreenshot =
-                            reportFolder + "/" + tcName + "_" + status + ".png"
+                    // Membuat subfolder di dalam folder Report juga agar rapi
+                    String reportSubFolder = reportFolder + "/Screenshot/" + modulePath
+                    new File(reportSubFolder).mkdirs()
+                    
+                    String reportScreenshot = reportSubFolder + "/" + tcName + "_" + status + ".png"
 
                     try {
                         WebUI.takeScreenshot(reportScreenshot)

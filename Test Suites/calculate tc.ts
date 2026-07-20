@@ -348,13 +348,6 @@
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>1ac7ab64-0718-4c6f-9e5e-6e1ed011a45b</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/Checkout/Positive/Positive - Ensure insurance fee is displayed per item in checkout</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
       <guid>bfe0979c-b0a2-4249-a614-e0cda33d69d0</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>

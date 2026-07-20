@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Memastikan biaya asuransi ditampilkan per item pada halaman checkout</description>
-   <name>Positive - Ensure insurance fee is displayed per item in checkout</name>
-   <tag></tag>
-   <comment></comment>
-   <recordOption>OTHER</recordOption>
-   <testCaseGuid>f3f37c10-f9be-49fc-b4c1-08c7e1aa92e7</testCaseGuid>
-</TestCaseEntity>
