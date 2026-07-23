@@ -96,13 +96,6 @@
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>bbe3c694-0643-4357-ad46-fa572af41f2f</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/Authentication/Login/Negative/Negative - Ensure mandatory validation message appears when account field is empty</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
       <guid>49a28589-672d-4d38-91cb-fc319a1bc5cf</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>Negative - Ensure mandatory validation message appears when account field is empty</name>
-   <tag></tag>
-   <comment></comment>
-   <recordOption>OTHER</recordOption>
-   <testCaseGuid>565e7a18-7035-429c-b792-aee4e7c8ffaa</testCaseGuid>
-</TestCaseEntity>

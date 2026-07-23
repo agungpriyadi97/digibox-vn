@@ -18,9 +18,6 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import utils.WindowHelper as WindowHelper
 
-not_run: WebUI.callTestCase(findTestCase('WEB/Authentication/Login/Positive/Positive - Ensure user can log in using valid account and password'), 
-    [:], FailureHandling.STOP_ON_FAILURE)
-
 WebUI.navigateToUrl('https://d-speedshop-digibox-vn.gtechdigital.id/pdp/iphone-12/SP220318148023')
 
 boolean isUrlMatch = CustomKeywords.'utils.WindowHelper.clickAndVerifyNewTab'(findTestObject('WEB/Product/PDP/btn_chat_zalo_with_buy_now'), 

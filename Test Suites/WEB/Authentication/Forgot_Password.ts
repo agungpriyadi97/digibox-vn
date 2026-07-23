@@ -40,13 +40,6 @@
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>fa59f4eb-8da8-47bd-a1a3-a51f324d2ca5</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/Authentication/Forgot Password/Positive/Positive - Ensure user can log in using new changed password</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
       <guid>b4d97be8-3c55-4e11-9374-54dbc0c5daaa</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
