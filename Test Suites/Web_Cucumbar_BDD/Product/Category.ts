@@ -15,7 +15,7 @@
       <guid>3ef7bc65-dea2-4656-9074-7fdba44901a3</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/Product/Category/TC_Category</testCaseId>
+      <testCaseId>Test Cases/Web_Cucumbar_BDD/Product/TC_Category</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
 </TestSuiteEntity>

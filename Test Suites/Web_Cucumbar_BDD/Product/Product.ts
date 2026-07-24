@@ -15,7 +15,7 @@
       <guid>352b3777-39bb-4131-8781-6509917de025</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/Product/PDP/TC_PDP</testCaseId>
+      <testCaseId>Test Cases/Web_Cucumbar_BDD/Product/TC_PDP</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
 </TestSuiteEntity>

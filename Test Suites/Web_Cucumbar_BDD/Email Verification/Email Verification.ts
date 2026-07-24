@@ -15,7 +15,7 @@
       <guid>1e2f67d3-755d-4d0b-93c7-2226c9127e31</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/Email Verification/TC_Email_Verification</testCaseId>
+      <testCaseId>Test Cases/Web_Cucumbar_BDD/Email Verification/TC_Email_Verification</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
 </TestSuiteEntity>

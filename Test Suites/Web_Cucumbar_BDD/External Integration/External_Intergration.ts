@@ -15,7 +15,7 @@
       <guid>8b8a9e38-6343-4ab3-a8a6-1af3d5fc64c7</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/External Integration/TC_External_Integration</testCaseId>
+      <testCaseId>Test Cases/Web_Cucumbar_BDD/External Integration/TC_External_Integration</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
 </TestSuiteEntity>

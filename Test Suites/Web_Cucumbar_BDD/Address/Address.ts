@@ -15,7 +15,7 @@
       <guid>eca2bb60-b3ca-46ac-9220-3bc8688da8a6</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/Address Management/Address My Account/TC_Address</testCaseId>
+      <testCaseId>Test Cases/Web_Cucumbar_BDD/Address Management/TC_Address</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
 </TestSuiteEntity>
