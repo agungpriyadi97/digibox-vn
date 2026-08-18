@@ -57,31 +57,19 @@ Contoh override manual:
     environment {
 
         PROJECT_NAME = 'Digibox-vn'
-
         PROJECT_FILE = 'digibox-vn.prj'
-
-        // 🌟 Folder tujuan di OneDrive / SharePoint
         PROJECT_FOLDER = 'Digibox.vn'
-
         ONEDRIVE_ATTACHMENTS = 'C:\\Users\\AgungPriyadi\\OneDrive - (G)Tech Digital\\Attachments'
-
         USERPROFILE = 'C:\\Users\\AgungPriyadi'
-
         DEFAULT_TEST = 'Test Suites/WEB/Web_Test_Suite_Collection/Regression_Digiboxvn_Web'
-
         KATALON_EXE = 'C:\\Users\\AgungPriyadi\\.katalon\\packages\\KS-11.1.3\\katalonc.exe'
-
         KATALON_API_KEY = credentials('katalon-api-key')
-
         KATALON_ORG_ID = '2078893'
-
-        // 🌟 Tembak langsung ke webhook n8n Google Sheets
         N8N_SHEETS_WEBHOOK = 'http://localhost:5678/webhook/79204498-fdea-41d3-a8a2-21b002f8b724'
     }
 
     stages {
 
-        // --- NOTIFIKASI MULAI ---
         stage('Notify Start') {
             steps {
                 script {
@@ -102,16 +90,19 @@ Contoh override manual:
                     bat '''
                     taskkill /F /IM katalonc.exe /T 2>nul || exit 0
                     taskkill /F /IM java.exe /T 2>nul || exit 0
+                    taskkill /F /IM chromedriver.exe /T 2>nul || exit 0
                     if exist "C:\\Users\\AgungPriyadi\\.katalon\\packages\\KS-11.1.3\\config\\.metadata\\.lock" del /f /q "C:\\Users\\AgungPriyadi\\.katalon\\packages\\KS-11.1.3\\config\\.metadata\\.lock" 2>nul || exit 0
+                    
+                    :: Bersihkan folder eksekusi lama agar hasil test case tidak terakumulasi
                     if exist Reports rmdir /s /q Reports
                     if exist Screenshot rmdir /s /q Screenshot
                     if exist summary.json del /f /q summary.json
+                    if exist test_results.json del /f /q test_results.json
                     if exist error_log.txt del /f /q error_log.txt
                     if exist failed_tests.json del /f /q failed_tests.json
                     if exist Failure_Report.zip del /f /q Failure_Report.zip
                     '''
 
-                    // 1. Mapping ENV Telegram ke Execution Profile Katalon
                     if (params.ENV?.trim()) {
                         def envInput = params.ENV.toLowerCase()
                         if (envInput == 'prod' || envInput == 'production') {
@@ -127,7 +118,6 @@ Contoh override manual:
                         env.TARGET_PROFILE = params.PROFILE ?: 'Development'
                     }
 
-                    // 2. Mapping SUITE / TEST_PATH & Deteksi Collection vs Suite
                     if (params.TEST_PATH?.trim()) {
                         def value = params.TEST_PATH.split("=")
                         env.ARG_TYPE = value[0]
@@ -243,7 +233,6 @@ ${env.ARG_TYPE}="${env.FINAL_PATH}" ^
                 testResults: 'Reports/**/*.xml'
             )
 
-            // 🌟 COPY HTML REPORT KE ONEDRIVE (DENGAN NAMA MODUL) & TRIGGER NOTIFIKASI FINISHED
             script {
                 def currentStatus = currentBuild.currentResult ?: 'UNKNOWN'
                 
@@ -274,7 +263,9 @@ ${env.ARG_TYPE}="${env.FINAL_PATH}" ^
                         } \
                     } catch { Write-Host ('Error copy OneDrive: ' + \$_.Exception.Message) }; \
                     \$p=0; \$f=0; \$s=0; \
-                    Get-ChildItem -Path 'Reports' -Filter '*.xml' -Recurse -ErrorAction SilentlyContinue | ForEach-Object { \
+                    \$latestFolder = Get-ChildItem -Path 'Reports' -Directory -Recurse | Where-Object { \$_.Name -match '^\\d{8}_\\d{6}\$' } | Sort-Object LastWriteTime -Descending | Select-Object -First 1; \
+                    \$searchRoot = if (\$latestFolder) { \$latestFolder.FullName } else { 'Reports' }; \
+                    Get-ChildItem -Path \$searchRoot -Filter '*.xml' -Recurse -ErrorAction SilentlyContinue | ForEach-Object { \
                         [xml]\$x = Get-Content \$_.FullName; \
                         foreach(\$ts in \$x.SelectNodes('//testsuite')){ \
                             \$t=[int]\$ts.tests; \
@@ -296,6 +287,7 @@ ${env.ARG_TYPE}="${env.FINAL_PATH}" ^
                         failed = \$f; \
                         skipped = \$s \
                     } | ConvertTo-Json; \
+                    Set-Content -Path 'summary.json' -Value \$body; \
                     Invoke-RestMethod -Uri 'http://localhost:5678/webhook/jenkins' -Method Post -ContentType 'application/json' -Body \$body; \
                     Write-Host 'SUCCESS: Finished Webhook sent to n8n' \
                 "
@@ -341,7 +333,9 @@ ${env.ARG_TYPE}="${env.FINAL_PATH}" ^
                     \$errs = @(); \
                     \$tcList = @(); \
                     \$i = 1; \
-                    Get-ChildItem -Path 'Reports' -Filter '*.xml' -Recurse -ErrorAction SilentlyContinue | ForEach-Object { \
+                    \$latestFolder = Get-ChildItem -Path 'Reports' -Directory -Recurse | Where-Object { \$_.Name -match '^\\d{8}_\\d{6}\$' } | Sort-Object LastWriteTime -Descending | Select-Object -First 1; \
+                    \$searchRoot = if (\$latestFolder) { \$latestFolder.FullName } else { 'Reports' }; \
+                    Get-ChildItem -Path \$searchRoot -Filter '*.xml' -Recurse -ErrorAction SilentlyContinue | ForEach-Object { \
                         [xml]\$x = Get-Content \$_.FullName; \
                         foreach(\$ts in \$x.SelectNodes('//testsuite')){ \
                             \$tsName = \$ts.name; \
@@ -359,7 +353,7 @@ ${env.ARG_TYPE}="${env.FINAL_PATH}" ^
                     }; \
                     if (\$errs.Count -eq 0) { \$errs += 'No detailed XML stacktrace found.' }; \
                     Set-Content -Path 'error_log.txt' -Value (\$errs -join ([Environment]::NewLine + '---' + [Environment]::NewLine)); \
-                    \$jsonPayload = @{ projectName = '${env.PROJECT_NAME}'; jobName = '${env.JOB_NAME}'; buildUrl = '${env.BUILD_URL}'; buildNumber = ${env.BUILD_NUMBER}; testCases = \$tcList } | ConvertTo-Json -Depth 5; \
+                    \$jsonPayload = @{ projectName = '${env.PROJECT_NAME}'; jobName = '${env.JOB_NAME}'; buildUrl = '${env.BUILD_URL}'; buildNumber = [int]${env.BUILD_NUMBER}; testCases = \$tcList } | ConvertTo-Json -Depth 5; \
                     Set-Content -Path 'failed_tests.json' -Value \$jsonPayload; \
                 "
 
@@ -388,7 +382,7 @@ ${env.ARG_TYPE}="${env.FINAL_PATH}" ^
                         }; \
                         if (Test-Path 'Screenshot') { \
                             New-Item -ItemType Directory -Path (Join-Path \$tempZip 'Screenshot') -Force | Out-Null; \
-                            Get-ChildItem -Path 'Screenshot' -Filter '*.png' -Recurse -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending | Select-Object -Last 10 | ForEach-Object { \
+                            Get-ChildItem -Path 'Screenshot' -Filter '*.png' -Recurse -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending | Select-Object -First 10 | ForEach-Object { \
                                 Copy-Item -Path \$_.FullName -Destination (Join-Path \$tempZip 'Screenshot') -Force; \
                             }; \
                         }; \
@@ -399,7 +393,9 @@ ${env.ARG_TYPE}="${env.FINAL_PATH}" ^
                     \$errs = @(); \
                     \$tcList = @(); \
                     \$i = 1; \
-                    Get-ChildItem -Path 'Reports' -Filter '*.xml' -Recurse -ErrorAction SilentlyContinue | ForEach-Object { \
+                    \$latestFolder = Get-ChildItem -Path 'Reports' -Directory -Recurse | Where-Object { \$_.Name -match '^\\d{8}_\\d{6}\$' } | Sort-Object LastWriteTime -Descending | Select-Object -First 1; \
+                    \$searchRoot = if (\$latestFolder) { \$latestFolder.FullName } else { 'Reports' }; \
+                    Get-ChildItem -Path \$searchRoot -Filter '*.xml' -Recurse -ErrorAction SilentlyContinue | ForEach-Object { \
                         [xml]\$x = Get-Content \$_.FullName; \
                         foreach(\$ts in \$x.SelectNodes('//testsuite')){ \
                             \$tsName = \$ts.name; \
@@ -417,7 +413,7 @@ ${env.ARG_TYPE}="${env.FINAL_PATH}" ^
                     }; \
                     if (\$errs.Count -eq 0) { \$errs += 'No detailed XML stacktrace found.' }; \
                     Set-Content -Path 'error_log.txt' -Value (\$errs -join ([Environment]::NewLine + '---' + [Environment]::NewLine)); \
-                    \$jsonPayload = @{ projectName = '${env.PROJECT_NAME}'; jobName = '${env.JOB_NAME}'; buildUrl = '${env.BUILD_URL}'; buildNumber = ${env.BUILD_NUMBER}; testCases = \$tcList } | ConvertTo-Json -Depth 5; \
+                    \$jsonPayload = @{ projectName = '${env.PROJECT_NAME}'; jobName = '${env.JOB_NAME}'; buildUrl = '${env.BUILD_URL}'; buildNumber = [int]${env.BUILD_NUMBER}; testCases = \$tcList } | ConvertTo-Json -Depth 5; \
                     Set-Content -Path 'failed_tests.json' -Value \$jsonPayload; \
                 "
 
