@@ -36,11 +36,6 @@ String summary = WebUI.getText(findTestObject('WEB/Checkout/OrderSummary/lbl_ord
 
 WebUI.verifyMatch(summary, '.*Tóm tắt đơn hàng.*', true)
 
-// Masukkan kode promo
-not_run: WebUI.setText(findTestObject('WEB/Checkout/OrderSummary/input_promo_code'), 'DISCOUNT10')
-
-not_run: WebUI.click(findTestObject('WEB/Checkout/OrderSummary/btn_apply_promo'))
-
 // Ambil nilai total
 String total = WebUI.getText(findTestObject('WEB/Checkout/OrderSummary/txt_total'))
 
@@ -97,22 +92,4 @@ WebUI.verifyMatch(content, '.*Cardholder does NOT have to register installment.*
 WebUI.click(findTestObject('WEB/Checkout/ConfirmDialog/btn_agree_continue'))
 
 WebUI.waitForPageLoad(10)
-
-// Verifikasi halaman sukses
-not_run: WebUI.waitForElementVisible(findTestObject('WEB/Checkout/PaymentResult/lbl_thank_you'), 10)
-
-// Ambil teks ucapan terima kasih
-not_run: String thankYou = WebUI.getText(findTestObject('WEB/Checkout/PaymentResult/lbl_thank_you'))
-
-not_run: WebUI.verifyMatch(thankYou, 'Cám ơn Quý khách!', false)
-
-// Ambil nomor order dari teks
-not_run: String orderText = WebUI.getText(findTestObject('WEB/Checkout/PaymentResult/txt_order_id'))
-
-not_run: String orderId = orderText.replaceAll('Mã đơn hàng.', '').trim()
-
-not_run: println('Order ID: ' + orderId)
-
-// Klik tombol lanjut belanja
-not_run: WebUI.click(findTestObject('WEB/Checkout/PaymentResult/button_Tip tc mua sm(continue shopping_)'))
 
