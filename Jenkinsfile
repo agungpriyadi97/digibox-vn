@@ -313,16 +313,27 @@ ${env.ARG_TYPE}="${env.FINAL_PATH}" ^
         }
 
         unstable {
-            echo "Automation UNSTABLE - Preparing Zip, AI Error Log & Sending to Google Sheets..."
+            echo "Automation UNSTABLE - Preparing Compact Zip, AI Error Log & Sending to Google Sheets..."
             script {
                 bat """
                 powershell -NoProfile -ExecutionPolicy Bypass -Command "\
                     try { \
                         \$tempZip = Join-Path \$env:TEMP 'DigiboxVN_Failures'; \
                         if (Test-Path \$tempZip) { Remove-Item \$tempZip -Recurse -Force -ErrorAction SilentlyContinue }; \
-                        New-Item -ItemType Directory -Path \$tempZip -Force | Out-Null; \
-                        if (Test-Path 'Reports') { Copy-Item -Path 'Reports' -Destination \$tempZip -Recurse -Force -ErrorAction SilentlyContinue }; \
-                        if (Test-Path 'Screenshot') { Get-ChildItem -Path 'Screenshot' -Filter '*.png' -Recurse -ErrorAction SilentlyContinue | Select-Object -Last 10 | ForEach-Object { Copy-Item -Path \$_.FullName -Destination \$tempZip -Force } }; \
+                        New-Item -ItemType Directory -Path (Join-Path \$tempZip 'Reports') -Force | Out-Null; \
+                        Get-ChildItem -Path 'Reports' -Recurse -File -ErrorAction SilentlyContinue | Where-Object { \$_.Extension -in '.html', '.xml', '.log', '.properties' } | ForEach-Object { \
+                            \$rel = \$_.FullName.Substring((Get-Item 'Reports').FullName.Length); \
+                            \$targetFile = Join-Path (Join-Path \$tempZip 'Reports') \$rel; \
+                            \$targetDir = Split-Path \$targetFile -Parent; \
+                            if (-not (Test-Path \$targetDir)) { New-Item -ItemType Directory -Path \$targetDir -Force | Out-Null }; \
+                            Copy-Item -Path \$_.FullName -Destination \$targetFile -Force; \
+                        }; \
+                        if (Test-Path 'Screenshot') { \
+                            New-Item -ItemType Directory -Path (Join-Path \$tempZip 'Screenshot') -Force | Out-Null; \
+                            Get-ChildItem -Path 'Screenshot' -Filter '*.png' -Recurse -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending | Select-Object -First 10 | ForEach-Object { \
+                                Copy-Item -Path \$_.FullName -Destination (Join-Path \$tempZip 'Screenshot') -Force; \
+                            }; \
+                        }; \
                         if (Test-Path 'Failure_Report.zip') { Remove-Item 'Failure_Report.zip' -Force -ErrorAction SilentlyContinue }; \
                         Compress-Archive -Path (Join-Path \$tempZip '*') -DestinationPath 'Failure_Report.zip' -CompressionLevel Optimal -Force -ErrorAction SilentlyContinue; \
                         Remove-Item \$tempZip -Recurse -Force -ErrorAction SilentlyContinue; \
@@ -360,16 +371,27 @@ ${env.ARG_TYPE}="${env.FINAL_PATH}" ^
         }
 
         failure {
-            echo "Automation FAILED - Preparing Zip, AI Error Log & Sending to Google Sheets..."
+            echo "Automation FAILED - Preparing Compact Zip, AI Error Log & Sending to Google Sheets..."
             script {
                 bat """
                 powershell -NoProfile -ExecutionPolicy Bypass -Command "\
                     try { \
                         \$tempZip = Join-Path \$env:TEMP 'DigiboxVN_Failures'; \
                         if (Test-Path \$tempZip) { Remove-Item \$tempZip -Recurse -Force -ErrorAction SilentlyContinue }; \
-                        New-Item -ItemType Directory -Path \$tempZip -Force | Out-Null; \
-                        if (Test-Path 'Reports') { Copy-Item -Path 'Reports' -Destination \$tempZip -Recurse -Force -ErrorAction SilentlyContinue }; \
-                        if (Test-Path 'Screenshot') { Get-ChildItem -Path 'Screenshot' -Filter '*.png' -Recurse -ErrorAction SilentlyContinue | Select-Object -Last 10 | ForEach-Object { Copy-Item -Path \$_.FullName -Destination \$tempZip -Force } }; \
+                        New-Item -ItemType Directory -Path (Join-Path \$tempZip 'Reports') -Force | Out-Null; \
+                        Get-ChildItem -Path 'Reports' -Recurse -File -ErrorAction SilentlyContinue | Where-Object { \$_.Extension -in '.html', '.xml', '.log', '.properties' } | ForEach-Object { \
+                            \$rel = \$_.FullName.Substring((Get-Item 'Reports').FullName.Length); \
+                            \$targetFile = Join-Path (Join-Path \$tempZip 'Reports') \$rel; \
+                            \$targetDir = Split-Path \$targetFile -Parent; \
+                            if (-not (Test-Path \$targetDir)) { New-Item -ItemType Directory -Path \$targetDir -Force | Out-Null }; \
+                            Copy-Item -Path \$_.FullName -Destination \$targetFile -Force; \
+                        }; \
+                        if (Test-Path 'Screenshot') { \
+                            New-Item -ItemType Directory -Path (Join-Path \$tempZip 'Screenshot') -Force | Out-Null; \
+                            Get-ChildItem -Path 'Screenshot' -Filter '*.png' -Recurse -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending | Select-Object -Last 10 | ForEach-Object { \
+                                Copy-Item -Path \$_.FullName -Destination (Join-Path \$tempZip 'Screenshot') -Force; \
+                            }; \
+                        }; \
                         if (Test-Path 'Failure_Report.zip') { Remove-Item 'Failure_Report.zip' -Force -ErrorAction SilentlyContinue }; \
                         Compress-Archive -Path (Join-Path \$tempZip '*') -DestinationPath 'Failure_Report.zip' -CompressionLevel Optimal -Force -ErrorAction SilentlyContinue; \
                         Remove-Item \$tempZip -Recurse -Force -ErrorAction SilentlyContinue; \
@@ -405,7 +427,6 @@ ${env.ARG_TYPE}="${env.FINAL_PATH}" ^
                 """
             }
         }
-
     }
 
 }
