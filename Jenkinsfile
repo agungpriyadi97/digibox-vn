@@ -102,6 +102,7 @@ Contoh override manual:
                     bat '''
                     powershell -NoProfile -ExecutionPolicy Bypass -Command "\
                         if (Test-Path 'Reports') { Remove-Item -Path 'Reports' -Recurse -Force -ErrorAction SilentlyContinue }; \
+                        if (Test-Path 'Reports_Archive') { Remove-Item -Path 'Reports_Archive' -Recurse -Force -ErrorAction SilentlyContinue }; \
                         if (Test-Path 'Screenshot') { Remove-Item -Path 'Screenshot' -Recurse -Force -ErrorAction SilentlyContinue }; \
                         if (Test-Path 'summary.json') { Remove-Item 'summary.json' -Force -ErrorAction SilentlyContinue }; \
                         if (Test-Path 'test_results.json') { Remove-Item 'test_results.json' -Force -ErrorAction SilentlyContinue }; \
@@ -176,10 +177,37 @@ Contoh override manual:
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'UNSTABLE') {
                     script {
-                        def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" -browserType=\"Chrome (headless)\" -reportFolder=\"Reports/Chrome_Reports\" -reportFileName=\"Chrome_Report\" --config -webui.autoUpdateDrivers=true -webui.chrome.args=\"--disable-blink-features=AutomationControlled --disable-dev-shm-usage --disable-gpu --no-sandbox --window-size=1920,1080\""
+                        def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" -browserType=\"Chrome (headless)\" --config -webui.autoUpdateDrivers=true -webui.chrome.args=\"--disable-blink-features=AutomationControlled --disable-dev-shm-usage --disable-gpu --no-sandbox --window-size=1920,1080\""
                         bat cmd
                     }
                 }
+
+                // Salin report HTML Chrome ke OneDrive & Pindahkan ke Archive
+                bat """
+                powershell -NoProfile -ExecutionPolicy Bypass -Command "\
+                    try { \
+                        \$dateStr = (Get-Date).ToString('dd-MM-yyyy'); \
+                        \$dest = Join-Path (Join-Path 'C:\\Users\\AgungPriyadi\\OneDrive - (G)Tech Digital\\Attachments\\${env.PROJECT_FOLDER}' \$dateStr) 'Chrome Headless'; \
+                        if (-not (Test-Path \$dest)) { New-Item -ItemType Directory -Path \$dest -Force | Out-Null }; \
+                        Get-ChildItem -Path 'Reports' -Filter '*.html' -Recurse -ErrorAction SilentlyContinue | ForEach-Object { \
+                            \$curr = \$_.Directory; \
+                            \$modName = ''; \
+                            while (\$curr -and \$curr.Name -ne 'Reports' -and \$curr.FullName -ne \$env:WORKSPACE) { \
+                                if (\$curr.Name -notmatch '^\\d{8}_\\d{6}\$' -and \$curr.Name -ne 'Test Suites') { \$modName = \$curr.Name; break }; \
+                                \$curr = \$curr.Parent \
+                            }; \
+                            if (-not \$modName) { \$modName = if ('${params.SUITE}') { (Split-Path '${params.SUITE}' -Leaf) } else { 'Test_Report' } }; \
+                            \$destFile = Join-Path \$dest (\$modName + '.html'); \
+                            Copy-Item -Path \$_.FullName -Destination \$destFile -Force; \
+                            Write-Host ('Copied Chrome HTML: ' + \$modName + '.html') \
+                        }; \
+                        New-Item -ItemType Directory -Path 'Reports_Archive\\Chrome' -Force | Out-Null; \
+                        Copy-Item -Path 'Reports\\*' -Destination 'Reports_Archive\\Chrome' -Recurse -Force; \
+                        Remove-Item -Path 'Reports' -Recurse -Force -ErrorAction SilentlyContinue; \
+                    } catch { Write-Host ('Error Chrome Copy: ' + \$_.Exception.Message) } \
+                "
+                """
+
                 bat '''
                 taskkill /F /IM chromedriver.exe /T 2>nul || exit 0
                 taskkill /F /IM chrome.exe /T 2>nul || exit 0
@@ -198,10 +226,37 @@ Contoh override manual:
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'UNSTABLE') {
                     script {
-                        def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" -browserType=\"Firefox (headless)\" -reportFolder=\"Reports/Firefox_Reports\" -reportFileName=\"Firefox_Report\" --config -webui.autoUpdateDrivers=true"
+                        def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" -browserType=\"Firefox (headless)\" --config -webui.autoUpdateDrivers=true"
                         bat cmd
                     }
                 }
+
+                // Salin report HTML Firefox ke OneDrive & Pindahkan ke Archive
+                bat """
+                powershell -NoProfile -ExecutionPolicy Bypass -Command "\
+                    try { \
+                        \$dateStr = (Get-Date).ToString('dd-MM-yyyy'); \
+                        \$dest = Join-Path (Join-Path 'C:\\Users\\AgungPriyadi\\OneDrive - (G)Tech Digital\\Attachments\\${env.PROJECT_FOLDER}' \$dateStr) 'Firefox Headless'; \
+                        if (-not (Test-Path \$dest)) { New-Item -ItemType Directory -Path \$dest -Force | Out-Null }; \
+                        Get-ChildItem -Path 'Reports' -Filter '*.html' -Recurse -ErrorAction SilentlyContinue | ForEach-Object { \
+                            \$curr = \$_.Directory; \
+                            \$modName = ''; \
+                            while (\$curr -and \$curr.Name -ne 'Reports' -and \$curr.FullName -ne \$env:WORKSPACE) { \
+                                if (\$curr.Name -notmatch '^\\d{8}_\\d{6}\$' -and \$curr.Name -ne 'Test Suites') { \$modName = \$curr.Name; break }; \
+                                \$curr = \$curr.Parent \
+                            }; \
+                            if (-not \$modName) { \$modName = if ('${params.SUITE}') { (Split-Path '${params.SUITE}' -Leaf) } else { 'Test_Report' } }; \
+                            \$destFile = Join-Path \$dest (\$modName + '.html'); \
+                            Copy-Item -Path \$_.FullName -Destination \$destFile -Force; \
+                            Write-Host ('Copied Firefox HTML: ' + \$modName + '.html') \
+                        }; \
+                        New-Item -ItemType Directory -Path 'Reports_Archive\\Firefox' -Force | Out-Null; \
+                        Copy-Item -Path 'Reports\\*' -Destination 'Reports_Archive\\Firefox' -Recurse -Force; \
+                        Remove-Item -Path 'Reports' -Recurse -Force -ErrorAction SilentlyContinue; \
+                    } catch { Write-Host ('Error Firefox Copy: ' + \$_.Exception.Message) } \
+                "
+                """
+
                 bat '''
                 taskkill /F /IM geckodriver.exe /T 2>nul || exit 0
                 taskkill /F /IM firefox.exe /T 2>nul || exit 0
@@ -213,49 +268,31 @@ Contoh override manual:
     post {
 
         always {
-            archiveArtifacts(
-                artifacts: 'Reports/**, Screenshot/**, failure_*.html',
-                allowEmptyArchive: true
-            )
-
-            junit(
-                allowEmptyResults: true,
-                testResults: 'Reports/**/JUnit_Report.xml, Reports/**/*.xml'
-            )
-
             script {
+                // Kembalikan semua file Reports dari Archive agar Post Actions (JUnit, Webhook, Summary) membaca total hasil kedua browser
+                bat '''
+                powershell -NoProfile -ExecutionPolicy Bypass -Command "\
+                    if (Test-Path 'Reports_Archive') { \
+                        New-Item -ItemType Directory -Path 'Reports' -Force | Out-Null; \
+                        Copy-Item -Path 'Reports_Archive\\*' -Destination 'Reports' -Recurse -Force -ErrorAction SilentlyContinue \
+                    } \
+                "
+                '''
+
+                archiveArtifacts(
+                    artifacts: 'Reports/**, Screenshot/**, failure_*.html',
+                    allowEmptyArchive: true
+                )
+
+                junit(
+                    allowEmptyResults: true,
+                    testResults: 'Reports/**/JUnit_Report.xml, Reports/**/*.xml'
+                )
+
                 def currentStatus = currentBuild.currentResult ?: 'UNKNOWN'
                 
                 bat """
                 powershell -NoProfile -ExecutionPolicy Bypass -Command "\
-                    try { \
-                        \$dateStr = (Get-Date).ToString('dd-MM-yyyy'); \
-                        \$targetBase = 'C:\\Users\\AgungPriyadi\\OneDrive - (G)Tech Digital\\Attachments\\${env.PROJECT_FOLDER}'; \
-                        if (-not (Test-Path \$targetBase)) { \
-                            \$found = Get-ChildItem -Path 'C:\\Users\\AgungPriyadi' -Filter '${env.PROJECT_FOLDER}' -Recurse -Directory -ErrorAction SilentlyContinue | Select-Object -First 1; \
-                            if (\$found) { \$targetBase = \$found.FullName } \
-                        }; \
-                        \$reports = Get-ChildItem -Path 'Reports' -Filter '*.html' -Recurse -ErrorAction SilentlyContinue; \
-                        if (\$reports) { \
-                            \$reports | ForEach-Object { \
-                                \$fullPath = \$_.FullName; \
-                                \$browserFolder = if (\$fullPath -match 'Firefox') { 'Firefox Headless' } else { 'Chrome Headless' }; \
-                                \$dest = Join-Path (Join-Path \$targetBase \$dateStr) \$browserFolder; \
-                                if (-not (Test-Path \$dest)) { New-Item -ItemType Directory -Path \$dest -Force | Out-Null }; \
-                                \$curr = \$_.Directory; \
-                                \$modName = ''; \
-                                while (\$curr -and \$curr.Name -ne 'Reports' -and \$curr.FullName -ne \$env:WORKSPACE) { \
-                                    if (\$curr.Name -notmatch '^\\d{8}_\\d{6}\$' -and \$curr.Name -ne 'Test Suites' -and \$curr.Name -ne 'Chrome_Reports' -and \$curr.Name -ne 'Firefox_Reports') { \$modName = \$curr.Name; break }; \
-                                    \$curr = \$curr.Parent \
-                                }; \
-                                if (-not \$modName) { \$modName = if ('${params.SUITE}') { (Split-Path '${params.SUITE}' -Leaf) } else { 'Test_Report' } }; \
-                                \$safeName = (\$modName -replace '[^a-zA-Z0-9_\\- ]', '_').Trim(); \
-                                \$destFile = Join-Path \$dest (\$safeName + '.html'); \
-                                Copy-Item -Path \$fullPath -Destination \$destFile -Force; \
-                                Write-Host ('Copied HTML (' + \$browserFolder + '): ' + \$safeName + '.html') \
-                            } \
-                        } \
-                    } catch { Write-Host ('Error copy OneDrive: ' + \$_.Exception.Message) }; \
                     \$p=0; \$f=0; \$s=0; \
                     \$xmlFiles = Get-ChildItem -Path 'Reports' -Filter 'JUnit_Report.xml' -Recurse -ErrorAction SilentlyContinue; \
                     if (-not \$xmlFiles) { \$xmlFiles = Get-ChildItem -Path 'Reports' -Filter '*.xml' -Recurse -ErrorAction SilentlyContinue | Where-Object { \$_.Name -ne 'TESTS-TestSuites.xml' } }; \
