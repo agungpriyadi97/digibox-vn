@@ -22,10 +22,8 @@ pipeline {
         choice(
             name: 'PROFILE',
             choices: [
-                'Development',
-                'QA',
-                'UAT',
-                'Production'
+                'default',
+                'development'
             ],
             description: 'Execution Profile'
         )
